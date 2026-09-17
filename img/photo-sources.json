@@ -1,0 +1,450 @@
+{
+ "suit": {
+  "lic": "cc0 1.0",
+  "title": "Man Suit",
+  "creator": "Matt Bango",
+  "source": "stocksnap",
+  "landing": "https://stocksnap.io/photo/man-suit-YXILCH8OVI",
+  "url": "https://cdn.stocksnap.io/img-thumbs/960w/YXILCH8OVI.jpg"
+ },
+ "sweatshirt": {
+  "lic": "by 2.0",
+  "title": "grey sweatshirt, skinny jeans, leopard flats",
+  "creator": "FaithSweetenedStyle",
+  "source": "flickr",
+  "landing": "https://www.flickr.com/photos/65923890@N06/14000563955",
+  "url": "https://live.staticflickr.com/7208/14000563955_0a29cc2a94.jpg"
+ },
+ "jeans": {
+  "lic": "cc0 1.0",
+  "title": "Blue Jeans",
+  "creator": "Seacoast Sage",
+  "source": "stocksnap",
+  "landing": "https://stocksnap.io/photo/blue-jeans-BCRQWOTPWM",
+  "url": "https://cdn.stocksnap.io/img-thumbs/960w/BCRQWOTPWM.jpg"
+ },
+ "shorts": {
+  "lic": "by 2.0",
+  "title": "Wonderful West Wittering - June 2011 - You Can Not Be Serious!",
+  "creator": "Gareth1953 All Right Now",
+  "source": "flickr",
+  "landing": "https://www.flickr.com/photos/40837632@N05/5894678059",
+  "url": "https://live.staticflickr.com/6044/5894678059_18a906c935_b.jpg"
+ },
+ "jumper": {
+  "lic": "by 2.0",
+  "title": "Vintage Ralph Lauren Cardigan",
+  "creator": "Menswear Market",
+  "source": "flickr",
+  "landing": "https://www.flickr.com/photos/85546319@N04/15785587141",
+  "url": "https://live.staticflickr.com/5609/15785587141_3e57b133b4_b.jpg"
+ },
+ "shirt": {
+  "lic": "cc0 1.0",
+  "title": "Collar Man",
+  "creator": "Matt Moloney",
+  "source": "stocksnap",
+  "landing": "https://stocksnap.io/photo/collar-man-HVFMRYVEAZ",
+  "url": "https://cdn.stocksnap.io/img-thumbs/960w/HVFMRYVEAZ.jpg"
+ },
+ "tie": {
+  "lic": "cc0 1.0",
+  "title": "Red necktie",
+  "creator": null,
+  "source": "rawpixel",
+  "landing": "https://www.rawpixel.com/image/6040177/red-necktie-free-public-domain-cc0-photo",
+  "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZnJidXNpbmVzc21hbl9wcm9mZXNzaW9uX3dvcmt3ZWFyXzY3NjM2My1pbWFnZS1reWJlM3gxdS5qcGc.jpg"
+ },
+ "shawl": {
+  "lic": "cc0 1.0",
+  "title": "seated woman, playing guitar, wearing",
+  "creator": null,
+  "source": "rawpixel",
+  "landing": "https://www.rawpixel.com/image/13959615/seated-woman-playing-guitar-wearing-fringed-shawl-photograph-ca1900",
+  "url": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAyL2xyL3djbXNwd3FuZDUtaW1hZ2UuanBn.jpg"
+ },
+ "gear": {
+  "lic": "by 2.0",
+  "title": "Motorcycle safety ride cruises to Brescia, offers operation basics",
+  "creator": "US Army Africa",
+  "source": "flickr",
+  "landing": "https://www.flickr.com/photos/36281822@N08/8936230762",
+  "url": "https://live.staticflickr.com/3748/8936230762_1a66d68270_b.jpg"
+ },
+ "boots": {
+  "lic": "cc0 1.0",
+  "title": "Free Leather Boots & Denim",
+  "creator": null,
+  "source": "rawpixel",
+  "landing": "https://www.rawpixel.com/image/5927180/photo-image-public-domain-person-free",
+  "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvaXMxMjQzMy1pbWFnZS1rd3Z5ZnFkMS5qcGc.jpg"
+ },
+ "sandals": {
+  "lic": "cc0 1.0",
+  "title": "Free woman sandals image",
+  "creator": null,
+  "source": "rawpixel",
+  "landing": "https://www.rawpixel.com/image/5921701/photo-image-public-domain-person-fashionable",
+  "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg2ODk1OTktaW1hZ2Uta3d2eGlyMGcuanBn.jpg"
+ },
+ "trainers": {
+  "lic": "cc0 1.0",
+  "title": "Sport Sneaker Shoe",
+  "creator": null,
+  "source": "rawpixel",
+  "landing": "https://www.rawpixel.com/image/5917192/sport-sneaker-shoe-free-public-domain-cc0-image",
+  "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvaXMxNDMxNC1pbWFnZS1rd3Z3dXdpZC5qcGc.jpg"
+ },
+ "highheels": {
+  "lic": "cc0 1.0",
+  "title": "High Heels Shoes",
+  "creator": null,
+  "source": "rawpixel",
+  "landing": "https://www.rawpixel.com/image/5970720/high-heels-shoes",
+  "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvaXMxNDIxMi1pbWFnZS1rd3lzZ3pzNi5qcGc.jpg"
+ },
+ "flipflops": {
+  "lic": "cc0 1.0",
+  "title": null,
+  "creator": null,
+  "source": "rawpixel",
+  "landing": "https://www.rawpixel.com/image/5970969/free-public-domain-cc0-photo",
+  "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZnJzdGV2ZWJ1aXNzaW5uZTAwMDEwLWltYWdlLWt3eXNqbzlwLmpwZw.jpg"
+ },
+ "bracelet": {
+  "lic": "cc0 1.0",
+  "title": "Seven chakra bracelet wrist",
+  "creator": null,
+  "source": "rawpixel",
+  "landing": "https://www.rawpixel.com/image/5919582/image-aesthetic-public-domain-hand",
+  "url": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL2JzMjM5LWltYWdlLWt3dng1c213LmpwZw.jpg"
+ },
+ "earrings": {
+  "lic": "cc0 1.0",
+  "title": "Crystal earring woman",
+  "creator": null,
+  "source": "rawpixel",
+  "landing": "https://www.rawpixel.com/image/6038024/photo-image-public-domain-person-fashion",
+  "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZnJlYXJfamV3ZWxsZXJ5X2VhcnJpbmdfZWFycmluZ3MtaW1hZ2Uta3liZHI0OGsuanBn.jpg"
+ },
+ "necklace": {
+  "lic": "cc0 1.0",
+  "title": "Necklace Pendant Ancient Roman",
+  "creator": "artinstitutechicago",
+  "source": "rawpixel",
+  "landing": "https://www.rawpixel.com/image/9021386/necklace-with-pendant-ancient-roman",
+  "url": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTEyL2FpYzgwNy1pbWFnZS5qcGc.jpg"
+ },
+ "ring": {
+  "lic": "cc0 1.0",
+  "title": "Diamond Engagement",
+  "creator": "Matt Bango",
+  "source": "stocksnap",
+  "landing": "https://stocksnap.io/photo/diamond-engagement-DQCN82UDE0",
+  "url": "https://cdn.stocksnap.io/img-thumbs/960w/DQCN82UDE0.jpg"
+ },
+ "hood": {
+  "lic": "by 2.0",
+  "title": "heather hoodie hood up",
+  "creator": "wlashbrook",
+  "source": "flickr",
+  "landing": "https://www.flickr.com/photos/78541549@N00/3985535002",
+  "url": "https://live.staticflickr.com/3423/3985535002_7a853e57d8_b.jpg"
+ },
+ "helmet": {
+  "lic": "cc0 1.0",
+  "title": "Patriotic motorcycle helmet design",
+  "creator": null,
+  "source": "rawpixel",
+  "landing": "https://www.rawpixel.com/image/5970216/motorcycles",
+  "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvaXMxMjQyMy1pbWFnZS1rd3lzZXZyZy5qcGc.jpg"
+ },
+ "hat": {
+  "lic": "cc0 1.0",
+  "title": "Woman Sun",
+  "creator": "Bruce Mars",
+  "source": "stocksnap",
+  "landing": "https://stocksnap.io/photo/woman-sun-6JEHS8PBHP",
+  "url": "https://cdn.stocksnap.io/img-thumbs/960w/6JEHS8PBHP.jpg"
+ },
+ "baseballcap": {
+  "lic": "cc0 1.0",
+  "title": "reflection boy wearing baseball cap",
+  "creator": null,
+  "source": "rawpixel",
+  "landing": "https://www.rawpixel.com/image/3291975/free-photo-image-apparel-asphalt-automobile",
+  "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYxODUxNTIzLXdpa2ltZWRpYS1pbWFnZS1rb3drbnlzei5qcGc.jpg"
+ },
+ "woollen": {
+  "lic": "cc0 1.0",
+  "title": null,
+  "creator": null,
+  "source": "rawpixel",
+  "landing": "https://www.rawpixel.com/image/5944307/free-public-domain-cc0-photo",
+  "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg4MTA1MzUtaW1hZ2Uta3d5b2Z2ZWouanBn.jpg"
+ },
+ "leather": {
+  "lic": "cc0 1.0",
+  "title": "Leather texture, brown background, clothing",
+  "creator": "Teddy",
+  "source": "rawpixel",
+  "landing": "https://www.rawpixel.com/image/6170772/photo-image-background-texture-abstract",
+  "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvcHg3NzEyNTUtaW1hZ2Utam9iNjMwLW0tbDBnMDd3cjguanBn.jpg"
+ },
+ "cotton": {
+  "lic": "cc0 1.0",
+  "title": "Cotton boll",
+  "creator": null,
+  "source": "rawpixel",
+  "landing": "https://www.rawpixel.com/image/6041852/cotton-boll-free-public-domain-cc0-image",
+  "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmw1MTU2NTI4MDk5My1pbWFnZS1reWJlZGxreS5qcGc.jpg"
+ },
+ "silk": {
+  "lic": "cc0 1.0",
+  "title": "Length of Silk Fabric",
+  "creator": "thegetty",
+  "source": "rawpixel",
+  "landing": "https://www.rawpixel.com/image/14263679/length-silk-fabric",
+  "url": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAyL2xyL2dldHR5MTA1eDZoLWltYWdlLmpwZw.jpg"
+ },
+ "suede": {
+  "lic": "cc0 1.0",
+  "title": null,
+  "creator": null,
+  "source": "rawpixel",
+  "landing": "https://www.rawpixel.com/image/5942651/free-public-domain-cc0-photo",
+  "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg4NzQ5NDQtaW1hZ2Uta3d5bzc5dzEuanBn.jpg"
+ },
+ "fur": {
+  "lic": "cc0 1.0",
+  "title": "brown fur coat black, oval",
+  "creator": null,
+  "source": "rawpixel",
+  "landing": "https://www.rawpixel.com/image/3300585/free-photo-image-fur-abies-art",
+  "url": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA2L3Vwd2s2MTg0Mjk5OC13aWtpbWVkaWEtaW1hZ2Uta293cGhyamkuanBn.jpg"
+ },
+ "faded": {
+  "lic": "cc0 1.0",
+  "title": "Blue Jeans",
+  "creator": "Seacoast Sage",
+  "source": "stocksnap",
+  "landing": "https://stocksnap.io/photo/blue-jeans-UNVCFEO2HD",
+  "url": "https://cdn.stocksnap.io/img-thumbs/960w/UNVCFEO2HD.jpg"
+ },
+ "knitted": {
+  "lic": "cc0 1.0",
+  "title": "Cream knit hat pom pom",
+  "creator": null,
+  "source": "rawpixel",
+  "landing": "https://www.rawpixel.com/image/6042659/photo-image-public-domain-free",
+  "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmw4NDg5NDkwNTAzLWltYWdlLWt5YmVoc3VhLmpwZw.jpg"
+ },
+ "sparkly": {
+  "lic": "by 2.0",
+  "title": "200128",
+  "creator": "SimpleSkye",
+  "source": "flickr",
+  "landing": "https://www.flickr.com/photos/44452897@N05/26160571998",
+  "url": "https://live.staticflickr.com/4672/26160571998_2158994b16_b.jpg"
+ },
+ "vneck": {
+  "lic": "by 2.0",
+  "title": "Ladies Scottish Collection V-Neck Sweater Cornflower-1",
+  "creator": "dunikowski",
+  "source": "flickr",
+  "landing": "https://www.flickr.com/photos/38318393@N07/4897894555",
+  "url": "https://live.staticflickr.com/4120/4897894555_c364e0b783_b.jpg"
+ },
+ "handmade": {
+  "lic": "by 2.0",
+  "title": "_D706934",
+  "creator": "media.digest",
+  "source": "flickr",
+  "landing": "https://www.flickr.com/photos/21712103@N06/11887804674",
+  "url": "https://live.staticflickr.com/2813/11887804674_b1edda1bfd_b.jpg"
+ },
+ "elegant": {
+  "lic": "by-sa 2.0",
+  "title": "salmon ballgown",
+  "creator": "Martina H.",
+  "source": "flickr",
+  "landing": "https://www.flickr.com/photos/157338256@N03/42385398652",
+  "url": "https://live.staticflickr.com/1732/42385398652_3fb53a976b_b.jpg"
+ },
+ "catwalk": {
+  "lic": "cc0 1.0",
+  "title": "long line female models catwalk",
+  "creator": null,
+  "source": "rawpixel",
+  "landing": "https://www.rawpixel.com/image/3286394/free-photo-image-catwalk-fashion",
+  "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYyMDQ5NDc3LXdpa2ltZWRpYS1pbWFnZS1rb3dmbXZ6MC5qcGc.jpg"
+ },
+ "marketstall": {
+  "lic": "by-sa 3.0",
+  "title": "HK CWB Jardine's Crescent morning outdoor market stalls clothing blue cover Aug-2012",
+  "creator": "Cheuogaiomedia",
+  "source": "wikimedia",
+  "landing": "https://commons.wikimedia.org/w/index.php?curid=20885522",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/0/01/HK_CWB_Jardine%27s_Crescent_morning_outdoor_market_stalls_clothing_blue_cover_Aug-2012.JPG"
+ },
+ "designerlabel": {
+  "lic": "by 2.0",
+  "title": "Reyn Spooner Label",
+  "creator": "Calsidyrose",
+  "source": "flickr",
+  "landing": "https://www.flickr.com/photos/17557997@N02/3638011059",
+  "url": "https://live.staticflickr.com/3651/3638011059_517a91eba2.jpg"
+ },
+ "luxury": {
+  "lic": "cc0 1.0",
+  "title": null,
+  "creator": null,
+  "source": "rawpixel",
+  "landing": "https://www.rawpixel.com/image/5960411/free-public-domain-cc0-photo",
+  "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHgxMTc1OTg3LWltYWdlLWt3eXF6bGxwLmpwZw.jpg"
+ },
+ "supermodel": {
+  "lic": "cc0 1.0",
+  "title": "Girl Autumn",
+  "creator": "Jonas Svidras",
+  "source": "stocksnap",
+  "landing": "https://stocksnap.io/photo/girl-autumn-KVJUCEE9JY",
+  "url": "https://cdn.stocksnap.io/img-thumbs/960w/KVJUCEE9JY.jpg"
+ },
+ "poloshirt": {
+  "lic": "by 2.0",
+  "title": "Women walking in a teal polo shirt",
+  "creator": "Rydale Country Clothing",
+  "source": "flickr",
+  "landing": "https://www.flickr.com/photos/182435424@N02/52361697776",
+  "url": "https://live.staticflickr.com/65535/52361697776_15c5cb8751_b.jpg"
+ },
+ "jacket": {
+  "lic": "cc0 1.0",
+  "title": "People Man",
+  "creator": "Crown Labs Agency",
+  "source": "stocksnap",
+  "landing": "https://stocksnap.io/photo/people-man-Z5NXXCKR6P",
+  "url": "https://cdn.stocksnap.io/img-thumbs/960w/Z5NXXCKR6P.jpg"
+ },
+ "tshirt": {
+  "lic": "cc0 1.0",
+  "title": "Back side man wearing white",
+  "creator": null,
+  "source": "rawpixel",
+  "landing": "https://www.rawpixel.com/image/11524160/photo-image-person-shirt-public-domain",
+  "url": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA0L2JzMTUzLWltYWdlLmpwZw.jpg"
+ },
+ "top": {
+  "lic": "by-sa 2.0",
+  "title": "DFC_0101: a woman with red hair wearing a black hat",
+  "creator": "PattayaPatrol",
+  "source": "flickr",
+  "landing": "https://www.flickr.com/photos/194424926@N05/54546084213",
+  "url": "https://live.staticflickr.com/65535/54546084213_f7040b54a1_b.jpg"
+ },
+ "dress": {
+  "lic": "cc0 1.0",
+  "title": "Woman Dress",
+  "creator": "Valeria Boltneva",
+  "source": "stocksnap",
+  "landing": "https://stocksnap.io/photo/woman-dress-KDQ60E3BPD",
+  "url": "https://cdn.stocksnap.io/img-thumbs/960w/KDQ60E3BPD.jpg"
+ },
+ "polyester": {
+  "lic": "by 2.0",
+  "title": "iPhone Wallpaper - Blue Cloth Weave",
+  "creator": "Patrick Hoesly",
+  "source": "flickr",
+  "landing": "https://www.flickr.com/photos/60057912@N00/5767237950",
+  "url": "https://live.staticflickr.com/5107/5767237950_e6597d2a44_b.jpg"
+ },
+ "striped": {
+  "lic": "cc0 1.0",
+  "title": "Sunglasses Jeans",
+  "creator": "Ylanite Koppens",
+  "source": "stocksnap",
+  "landing": "https://stocksnap.io/photo/sunglasses-jeans-JMGEUCEUJY",
+  "url": "https://cdn.stocksnap.io/img-thumbs/960w/JMGEUCEUJY.jpg"
+ },
+ "secondhand": {
+  "lic": "by 2.0",
+  "title": "Day of Caring",
+  "creator": "JimsFlicker",
+  "source": "flickr",
+  "landing": "https://www.flickr.com/photos/28156061@N04/15024082417",
+  "url": "https://live.staticflickr.com/5588/15024082417_37b1a69507.jpg"
+ },
+ "kneelength": {
+  "lic": "by 2.0",
+  "title": "172238",
+  "creator": "SimpleSkye",
+  "source": "flickr",
+  "landing": "https://www.flickr.com/photos/44452897@N05/32008116533",
+  "url": "https://live.staticflickr.com/3791/32008116533_97e0e775f9_b.jpg"
+ },
+ "casual": {
+  "lic": "by 2.0",
+  "title": "Mr. Rogers",
+  "creator": "Lorena Cupcake",
+  "source": "flickr",
+  "landing": "https://www.flickr.com/photos/22901150@N00/3962178294",
+  "url": "https://live.staticflickr.com/2619/3962178294_fa481de205_b.jpg"
+ },
+ "smart": {
+  "lic": "by 2.0",
+  "title": "Day 23 Occupy Wall Street October 8 2011 Shankbone 50",
+  "creator": "david_shankbone",
+  "source": "flickr",
+  "landing": "https://www.flickr.com/photos/27865228@N06/6224059175",
+  "url": "https://live.staticflickr.com/6041/6224059175_3ef4627a5e_b.jpg"
+ },
+ "scruffy": {
+  "lic": "cc0 1.0",
+  "title": "Original public domain image Wikimedia",
+  "creator": null,
+  "source": "rawpixel",
+  "landing": "https://www.rawpixel.com/image/3287511/free-photo-image-alcohol-apparel-beer",
+  "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYyMjY3NzcyLXdpa2ltZWRpYS1pbWFnZS1rb3dpOWM4aS5qcGc.jpg"
+ },
+ "outrageous": {
+  "lic": "by 2.0",
+  "title": "Copenhagen Carnival 2015",
+  "creator": "Stig Nygaard",
+  "source": "flickr",
+  "landing": "https://www.flickr.com/photos/10259776@N00/17690640174",
+  "url": "https://live.staticflickr.com/7784/17690640174_ddfae94b93_b.jpg"
+ },
+ "fashionable": {
+  "lic": "cc0 1.0",
+  "title": "Woman Sunglasses",
+  "creator": "Matt Moloney",
+  "source": "stocksnap",
+  "landing": "https://stocksnap.io/photo/woman-sunglasses-CAVKTWKRNQ",
+  "url": "https://cdn.stocksnap.io/img-thumbs/960w/CAVKTWKRNQ.jpg"
+ },
+ "outfit": {
+  "lic": "cc0 1.0",
+  "title": "Hanging Shirts",
+  "creator": null,
+  "source": "rawpixel",
+  "landing": "https://www.rawpixel.com/image/5964955/hanging-shirts",
+  "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHUyMzM1MzYyLWltYWdlLWt3eXJtb2h1LmpwZw.jpg"
+ },
+ "shortsleeved": {
+  "lic": "by 2.0",
+  "title": "",
+  "creator": "Full Yum",
+  "source": "flickr",
+  "landing": "https://www.flickr.com/photos/22646088@N07/21384394386",
+  "url": "https://live.staticflickr.com/745/21384394386_1cc1d157cb_b.jpg"
+ },
+ "openneck": {
+  "lic": "by 2.0",
+  "title": "",
+  "creator": "Full Yum",
+  "source": "flickr",
+  "landing": "https://www.flickr.com/photos/22646088@N07/21384394386",
+  "url": "https://live.staticflickr.com/745/21384394386_1cc1d157cb_b.jpg"
+ }
+}
