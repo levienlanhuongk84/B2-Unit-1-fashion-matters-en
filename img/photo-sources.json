@@ -33,11 +33,11 @@
  },
  "jumper": {
   "lic": "by 2.0",
-  "title": "Vintage Ralph Lauren Cardigan",
-  "creator": "Menswear Market",
+  "title": "Kris's Lopi Pullover",
+  "creator": "LollyKnit",
   "source": "flickr",
-  "landing": "https://www.flickr.com/photos/85546319@N04/15785587141",
-  "url": "https://live.staticflickr.com/5609/15785587141_3e57b133b4_b.jpg"
+  "landing": "https://www.flickr.com/photos/lollyknit/",
+  "url": "cropped from Openverse search result"
  },
  "shirt": {
   "lic": "cc0 1.0",
@@ -304,12 +304,12 @@
   "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHgxMTc1OTg3LWltYWdlLWt3eXF6bGxwLmpwZw.jpg"
  },
  "supermodel": {
-  "lic": "cc0 1.0",
-  "title": "Girl Autumn",
-  "creator": "Jonas Svidras",
-  "source": "stocksnap",
-  "landing": "https://stocksnap.io/photo/girl-autumn-KVJUCEE9JY",
-  "url": "https://cdn.stocksnap.io/img-thumbs/960w/KVJUCEE9JY.jpg"
+  "lic": "by-sa 2.0",
+  "title": "Twinkle Dress and Twinkle Cardigan + EL Wire Dress, Diana Eng's Fairytale Fashion Show at Eyebeam NYC (cropped)",
+  "creator": "See-ming Lee (SML)",
+  "source": "flickr",
+  "landing": "https://www.flickr.com/photos/48973657@N00/4389450685",
+  "url": "https://live.staticflickr.com/4037/4389450685_59aec42af2_b.jpg"
  },
  "poloshirt": {
   "lic": "by 2.0",
@@ -377,11 +377,11 @@
  },
  "kneelength": {
   "lic": "by 2.0",
-  "title": "172238",
-  "creator": "SimpleSkye",
-  "source": "flickr",
-  "landing": "https://www.flickr.com/photos/44452897@N05/32008116533",
-  "url": "https://live.staticflickr.com/3791/32008116533_97e0e775f9_b.jpg"
+  "title": "Woman wearing black turtleneck and blue skirt",
+  "creator": "Carrie A.",
+  "source": "wikimedia",
+  "landing": "https://commons.wikimedia.org/w/index.php?curid=78698748",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Woman_wearing_black_turtleneck_and_blue_skirt.jpg"
  },
  "casual": {
   "lic": "by 2.0",
@@ -440,11 +440,11 @@
   "url": "https://live.staticflickr.com/745/21384394386_1cc1d157cb_b.jpg"
  },
  "openneck": {
-  "lic": "by 2.0",
-  "title": "",
-  "creator": "Full Yum",
+  "lic": "by-sa 2.0",
+  "title": "(cropped, untitled church event photo)",
+  "creator": "Debarshi Ray",
   "source": "flickr",
-  "landing": "https://www.flickr.com/photos/22646088@N07/21384394386",
-  "url": "https://live.staticflickr.com/745/21384394386_1cc1d157cb_b.jpg"
+  "landing": "https://www.flickr.com/photos/39423133@N04/45632400595",
+  "url": "https://live.staticflickr.com/4858/45632400595_20f24cf705_b.jpg"
  }
 }
