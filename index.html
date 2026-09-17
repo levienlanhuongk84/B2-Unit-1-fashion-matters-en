@@ -156,6 +156,8 @@
   .card h4 { margin-bottom: 6px; }
   .card .eyebrow { display: block; margin-bottom: 6px; }
   .card ul, .card p { font-size: .95em; }
+  .card ul { padding-left: 1.1em; color: var(--ink-2); }
+  .card ul li + li { margin-top: 3px; }
   .card p { color: var(--ink-2); }
 
   .tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
@@ -247,8 +249,11 @@
   .btn.stop { background: var(--surface); color: var(--ink-2); border: 1px solid var(--line-strong); }
 
   .items { display: grid; gap: 10px; }
-  .items.two { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-  .items.three { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+  .items.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  @media (max-width: 700px) { .items.two { grid-template-columns: 1fr; } }
+  .items.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  @media (max-width: 900px) { .items.three { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 560px) { .items.three { grid-template-columns: 1fr; } }
   .it { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
   .it .lab { font-family: var(--font-mono); font-weight: 700; color: var(--orange-ink); min-width: 1.4em; }
   .it .q { flex: 1 1 200px; }
@@ -424,10 +429,6 @@
   .li-card .li-foot { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: .85em; color: var(--muted); flex-wrap: wrap; }
   .li-card .li-foot label { display: inline-flex; align-items: center; gap: 6px; color: var(--ink-2); cursor: pointer; }
   .li-card .li-n { font-family: var(--font-mono); font-weight: 700; color: var(--purple-ink); }
-  .li-card.weak { border-color: var(--gold); box-shadow: 0 0 0 2px var(--gold-soft) inset; }
-  .li-sum { display: flex; gap: 8px 18px; flex-wrap: wrap; margin: 10px 0 4px; font-family: var(--font-cond); font-weight: 700; color: var(--purple-ink); }
-  .li-sum .n { font-family: var(--font-mono); font-size: 1.25em; margin-right: 4px; }
-  .li-sum .n.full { color: var(--good); }
   @media (max-width: 640px) { .li-grid { grid-template-columns: 1fr; } }
   .use { background: linear-gradient(90deg, var(--gold-soft), var(--surface)); border-left: 4px solid var(--gold); padding: 10px 14px; border-radius: 0 10px 10px 0; margin-top: 10px; }
   .use b { font-family: var(--font-cond); text-transform: uppercase; letter-spacing: .06em; font-size: .78em; color: var(--orange-ink); margin-right: 8px; }
@@ -468,7 +469,9 @@
   .qa .a { line-height: 1.9; }
   .model p.step { margin-block: 8px; }
   .model .wcnt { display: block; margin-top: 8px; font-size: .82em; color: var(--muted); font-family: var(--font-mono); }
-  .fn { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 10px; }
+  .fn { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  @media (max-width: 900px) { .fn { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 560px) { .fn { grid-template-columns: 1fr; } }
   .fn .card h4 { color: var(--purple-ink); font-size: 1em; }
   .fn .card ul { padding-left: 1.1em; font-size: .93em; }
   .fn .card p.ex { color: var(--orange-ink); margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--line); }
@@ -486,9 +489,9 @@
 
   /* vocabulary cards: photo on top (untouched by text); word/meaning/IPA centred below it; example below that in a distinct colour */
   .sub-h { font-family: var(--font-cond); text-transform: uppercase; letter-spacing: .06em; font-size: .8em; color: var(--orange-ink); font-weight: 700; padding: 12px 14px 2px; }
-  .vgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; padding: 6px 14px 14px; }
-  @media (max-width: 900px) { .vgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  @media (max-width: 560px) { .vgrid { grid-template-columns: 1fr; } }
+  .vgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; padding: 6px 14px 14px; max-width: 860px; }
+  @media (max-width: 900px) { .vgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 620px; } }
+  @media (max-width: 560px) { .vgrid { grid-template-columns: 1fr; max-width: 340px; } }
   .vcard { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); }
   .vcard .vmedia { position: relative; background: var(--surface-2); }
   .vcard .vmedia img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
@@ -585,17 +588,17 @@
   <section class="block">
     <div class="part-sticky">
       <h3 id="li-a2">Activity 2 · How many words do you already have for the 6 groups?</h3>
-      <div class="timer"><span class="tdisp">5:00</span><button class="btn sm" type="button" data-sec="300">Brainstorm 5'</button><button class="btn sm stop tstop" type="button">⏹</button><span style="color:var(--muted);font-size:.9em">For each group, type every English word / phrase you can think of (separated by commas). Tick <b>the 3 groups you're weakest in</b>. On Day 7, do it again and compare your word counts.</span></div>
+      <div class="timer"><span class="tdisp">5:00</span><button class="btn sm" type="button" data-sec="300">Brainstorm 5'</button><button class="btn sm stop tstop" type="button">⏹</button><span style="color:var(--muted);font-size:.9em">For each group, type every English word / phrase you can think of (separated by commas).</span></div>
     </div>
     <div class="li-grid">
-      <div class="li-card"><div class="li-top"><span class="chip p">Group 1</span><a class="li-go" href="#g1" data-go="g1">Open group →</a></div><b>What to wear — clothes, footwear, materials</b><p class="ask">What are the people around you wearing right now?</p><input class="ans" id="li-g1" placeholder="word 1, word 2, …" aria-label="Group 1"><div class="li-foot"><span class="li-n">0 words</span><label><input type="checkbox" id="li-w1"> groups I'm weak in</label></div></div>
-      <div class="li-card"><div class="li-top"><span class="chip p">Group 2</span><a class="li-go" href="#g2" data-go="g2">Open group →</a></div><b>How you look — appearance &amp; style</b><p class="ask">How would you describe a colleague's style in three words?</p><input class="ans" id="li-g2" placeholder="word 1, word 2, …" aria-label="Group 2"><div class="li-foot"><span class="li-n">0 words</span><label><input type="checkbox" id="li-w2"> groups I'm weak in</label></div></div>
-      <div class="li-card"><div class="li-top"><span class="chip p">Group 3</span><a class="li-go" href="#g3" data-go="g3">Open group →</a></div><b>What you do with clothes — phrasal verbs</b><p class="ask">What do you do with clothes — from the shop to the wardrobe?</p><input class="ans" id="li-g3" placeholder="word 1, word 2, …" aria-label="Group 3"><div class="li-foot"><span class="li-n">0 words</span><label><input type="checkbox" id="li-w3"> groups I'm weak in</label></div></div>
-      <div class="li-card"><div class="li-top"><span class="chip p">Group 4</span><a class="li-go" href="#g4" data-go="g4">Open group →</a></div><b>How much fashion matters — attitudes</b><p class="ask">How important is fashion to you — and how would you say so in English?</p><input class="ans" id="li-g4" placeholder="word 1, word 2, …" aria-label="Group 4"><div class="li-foot"><span class="li-n">0 words</span><label><input type="checkbox" id="li-w4"> groups I'm weak in</label></div></div>
-      <div class="li-card"><div class="li-top"><span class="chip p">Group 5</span><a class="li-go" href="#g5" data-go="g5">Open group →</a></div><b>Comparing &amp; choosing</b><p class="ask">Trainers or leather shoes for a ward round — how many ways can you compare them?</p><input class="ans" id="li-g5" placeholder="word 1, word 2, …" aria-label="Group 5"><div class="li-foot"><span class="li-n">0 words</span><label><input type="checkbox" id="li-w5"> groups I'm weak in</label></div></div>
-      <div class="li-card"><div class="li-top"><span class="chip p">Group 6</span><a class="li-go" href="#g6" data-go="g6">Open group →</a></div><b>The fashion industry — issues &amp; opinions</b><p class="ask">What is wrong with the fashion industry, in your view?</p><input class="ans" id="li-g6" placeholder="word 1, word 2, …" aria-label="Group 6"><div class="li-foot"><span class="li-n">0 words</span><label><input type="checkbox" id="li-w6"> groups I'm weak in</label></div></div>
+      <div class="li-card"><div class="li-top"><span class="chip p">Group 1</span><a class="li-go" href="#g1" data-go="g1">Open group →</a></div><b>What to wear — clothes, footwear, materials</b><p class="ask">What are the people around you wearing right now?</p><input class="ans" id="li-g1" placeholder="word 1, word 2, …" aria-label="Group 1"><div class="li-foot"><span class="li-n">0 words</span></div></div>
+      <div class="li-card"><div class="li-top"><span class="chip p">Group 2</span><a class="li-go" href="#g2" data-go="g2">Open group →</a></div><b>How you look — appearance &amp; style</b><p class="ask">How would you describe a colleague's style in three words?</p><input class="ans" id="li-g2" placeholder="word 1, word 2, …" aria-label="Group 2"><div class="li-foot"><span class="li-n">0 words</span></div></div>
+      <div class="li-card"><div class="li-top"><span class="chip p">Group 3</span><a class="li-go" href="#g3" data-go="g3">Open group →</a></div><b>What you do with clothes — phrasal verbs</b><p class="ask">What do you do with clothes — from the shop to the wardrobe?</p><input class="ans" id="li-g3" placeholder="word 1, word 2, …" aria-label="Group 3"><div class="li-foot"><span class="li-n">0 words</span></div></div>
+      <div class="li-card"><div class="li-top"><span class="chip p">Group 4</span><a class="li-go" href="#g4" data-go="g4">Open group →</a></div><b>How much fashion matters — attitudes</b><p class="ask">How important is fashion to you — and how would you say so in English?</p><input class="ans" id="li-g4" placeholder="word 1, word 2, …" aria-label="Group 4"><div class="li-foot"><span class="li-n">0 words</span></div></div>
+      <div class="li-card"><div class="li-top"><span class="chip p">Group 5</span><a class="li-go" href="#g5" data-go="g5">Open group →</a></div><b>Comparing &amp; choosing</b><p class="ask">Trainers or leather shoes for a ward round — how many ways can you compare them?</p><input class="ans" id="li-g5" placeholder="word 1, word 2, …" aria-label="Group 5"><div class="li-foot"><span class="li-n">0 words</span></div></div>
+      <div class="li-card"><div class="li-top"><span class="chip p">Group 6</span><a class="li-go" href="#g6" data-go="g6">Open group →</a></div><b>The fashion industry — issues &amp; opinions</b><p class="ask">What is wrong with the fashion industry, in your view?</p><input class="ans" id="li-g6" placeholder="word 1, word 2, …" aria-label="Group 6"><div class="li-foot"><span class="li-n">0 words</span></div></div>
     </div>
-    <div class="li-sum"><span><span class="n" id="li-sum-words">0</span>words so far</span><span><span class="n" id="li-sum-weak">0/3</span>weak groups ticked</span></div>
+    
   </section>
 </article>
 
@@ -611,12 +614,12 @@
   <section class="block">
     <h3 id="r-goal">Learning outcomes</h3>
     <div class="grid-3">
-      <div class="card"><span class="eyebrow">Speaking · Part 1 · Social interaction</span><p>Answer 6 questions about fashion and work clothes, each in ≤ 30 seconds, 2–3 clauses, with at least 1 topic collocation.</p></div>
-      <div class="card"><span class="eyebrow">Speaking · Part 2 · Topic development</span><p>Speak for about 3 minutes using the 3-box diagram + your own idea, covering Point → Why → Example → Counter → Evaluation, with ≥ 6 topic chunks and ≥ 3 comparative structures.</p></div>
-      <div class="card"><span class="eyebrow">Speaking · Part 3 · Extended questions</span><p>Answer 3 extended questions in 4 minutes, each with 3–4 clauses covering Point + Why + Counter + Evaluation and ≥ 1 topic chunk.</p></div>
-      <div class="card"><span class="eyebrow">Writing · Task 1 · Email</span><p>Write an email of ≥ 120 words covering all 3 of your points, in a friendly tone, with ≥ 4 topic chunks and ≥ 2 comparative sentences.</p></div>
-      <div class="card"><span class="eyebrow">Writing · Task 2 · Essay</span><p>Write an essay of ≥ 250 words stating your opinion, 4–5 paragraphs, ≥ 6 topic chunks, ≥ 3 comparative structures / adverbs of degree, and 1 concession sentence.</p></div>
-      <div class="card"><span class="eyebrow">Vocabulary &amp; comparison</span><p>Actively use 57 B2 chunks across 6 groups (quiz ≥ 13/16 after 7 days) and correctly write ≥ 10/14 key word transformation sentences about comparison.</p></div>
+      <div class="card"><span class="eyebrow">Speaking · Part 1 · Social interaction</span><ul><li>Answer 6 questions about fashion and work clothes</li><li>Each answer ≤ 30 seconds, 2–3 clauses</li><li>At least 1 topic collocation</li></ul></div>
+      <div class="card"><span class="eyebrow">Speaking · Part 2 · Topic development</span><ul><li>Speak for about 3 minutes using the 3-box diagram + your own idea</li><li>All 5 steps: Point → Why → Example → Counter → Evaluation</li><li>≥ 6 topic chunks and ≥ 3 comparative structures</li></ul></div>
+      <div class="card"><span class="eyebrow">Speaking · Part 3 · Extended questions</span><ul><li>Answer 3 extended questions in 4 minutes</li><li>Each answer has 3–4 clauses covering Point + Why + Counter + Evaluation</li><li>≥ 1 topic chunk</li></ul></div>
+      <div class="card"><span class="eyebrow">Writing · Task 1 · Email</span><ul><li>Email ≥ 120 words, covering all 3 of your points</li><li>Friendly tone</li><li>≥ 4 topic chunks, ≥ 2 comparative sentences</li></ul></div>
+      <div class="card"><span class="eyebrow">Writing · Task 2 · Essay</span><ul><li>Essay ≥ 250 words, stating your opinion clearly</li><li>4–5 paragraphs</li><li>≥ 6 topic chunks, ≥ 3 comparative structures / adverbs of degree</li><li>1 concession sentence</li></ul></div>
+      <div class="card"><span class="eyebrow">Vocabulary &amp; comparison</span><ul><li>Actively use 57 B2 chunks across 6 groups</li><li>Quiz ≥ 13/16 after 7 days</li><li>Correctly write ≥ 10/14 key word transformation sentences about comparison</li></ul></div>
     </div>
   </section>
 
@@ -638,7 +641,7 @@
       <div class="card"><span class="eyebrow">Session 1 · 4 periods · 1.1 Fashion matters (SB pp. 10–11) · speaking output</span>
         <div class="tablewrap" style="border:0"><table>
           <tbody>
-            <tr><td class="t" style="width:14%">20'</td><td><ul class="substeps"><li>Sheet 1 · Activity 1: 6 scenarios, pairs 3'</li><li>Activity 2: type known words for the 6 groups, tick 3 weak groups</li><li>Sheet 2: read the 6 outcomes</li></ul></td></tr>
+            <tr><td class="t" style="width:14%">20'</td><td><ul class="substeps"><li>Sheet 1 · Activity 1: 6 scenarios, pairs 3'</li><li>Activity 2: type known words for the 6 groups</li><li>Sheet 2: read the 6 outcomes</li></ul></td></tr>
             <tr><td class="t">40'</td><td><ul class="substeps"><li>Group 1 and Group 2: Core → Advanced → Collocations</li><li>SB p. 10 Ex 2–3: describe the people in photos 1a–4b in pairs</li><li>Exercise 1, Sheet 7 (sorting)</li></ul></td></tr>
             <tr><td class="t">15'</td><td><ul class="substeps"><li>SB p. 10 Ex 6: listen to CD 1.02–1.03, match 5 speakers to photos</li><li>Check answers with a partner</li></ul></td></tr>
             <tr><td class="t">40'</td><td><ul class="substeps"><li>Group 3: 3 rule cards + 24 phrasal verbs; SB p. 11 Ex 7 and 9</li><li>Exercise 2, Sheet 7 (find the phrasal verb in what the speaker says)</li><li>Exercise 3, Sheet 7 (= SB Ex 8, done on the page)</li><li>Exercise 4, Sheet 7 (word order)</li></ul></td></tr>
@@ -1719,22 +1722,14 @@
   }));
   (function () {
     const cards = $$('.li-card'); if (!cards.length) return;
-    const sumW = $('#li-sum-words'), sumK = $('#li-sum-weak');
     const count = v => v.split(/[,;\n]+/).map(s => s.trim()).filter(Boolean).length;
     const update = () => {
-      let total = 0, weak = 0;
       cards.forEach(c => {
-        const inp = $('input.ans', c), n = $('.li-n', c), cb = $('input[type=checkbox]', c);
-        const k = count(inp.value); total += k; n.textContent = k + ' ' + STR.words;
-        c.classList.toggle('weak', cb.checked); if (cb.checked) weak++;
+        const inp = $('input.ans', c), n = $('.li-n', c);
+        n.textContent = count(inp.value) + ' ' + STR.words;
       });
-      sumW.textContent = total; sumK.textContent = weak + '/3'; sumK.classList.toggle('full', weak === 3);
     };
-    cards.forEach(c => {
-      $('input.ans', c).addEventListener('input', update);
-      const cb = $('input[type=checkbox]', c);
-      cb.addEventListener('change', () => { if (cb.checked && cards.filter(x => $('input[type=checkbox]', x).checked).length > 3) { cb.checked = false; store.del(KEY + ':c:' + cb.id); } update(); });
-    });
+    cards.forEach(c => $('input.ans', c).addEventListener('input', update));
     update();
   })();
   let start = 0;
