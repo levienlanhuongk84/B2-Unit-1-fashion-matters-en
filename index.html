@@ -489,9 +489,10 @@
 
   /* vocabulary cards: photo on top (untouched by text); word/meaning/IPA centred below it; example below that in a distinct colour */
   .sub-h { font-family: var(--font-cond); text-transform: uppercase; letter-spacing: .06em; font-size: .8em; color: var(--orange-ink); font-weight: 700; padding: 12px 14px 2px; }
-  .vgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; padding: 6px 14px 14px; max-width: 860px; }
-  @media (max-width: 900px) { .vgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 620px; } }
-  @media (max-width: 560px) { .vgrid { grid-template-columns: 1fr; max-width: 340px; } }
+  .vgrid { display: grid; grid-template-columns: repeat(var(--vcols, 4), minmax(0, 1fr)); gap: 10px; padding: 6px 14px 14px; }
+  @media (max-width: 1100px) { .vgrid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 900px) { .vgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 560px) { .vgrid { grid-template-columns: 1fr; } }
   .vcard { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); }
   .vcard .vmedia { position: relative; background: var(--surface-2); }
   .vcard .vmedia img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
@@ -692,87 +693,87 @@
     <div class="tiers">
       <div class="tier core"><div class="tier-h">Core · SB Unit 1</div>
         <div class="sub-h">Clothes</div>
-        <div class="vgrid">
-          <div class="vcard"><div class="vmedia"><img src="img/v-suit.jpg" alt="suit" loading="lazy"><div class="voverlay"><div class="vw">suit</div><div class="vm">a jacket and trousers made of matching fabric, worn for formal or business occasions</div><div class="vipa">/suːt/</div></div></div><div class="vex">I only wear a suit for conferences and job interviews.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-sweatshirt.jpg" alt="sweatshirt" loading="lazy"><div class="voverlay"><div class="vw">sweatshirt</div><div class="vm">a thick, warm cotton top, often worn casually or for sport</div><div class="vipa">/ˈswetʃɜːt/</div></div></div><div class="vex">After a night shift I just want a sweatshirt and a coffee.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-jeans.jpg" alt="jeans" loading="lazy"><div class="voverlay"><div class="vw">jeans</div><div class="vm">trousers made of strong cotton fabric (denim)</div><div class="vipa">/dʒiːnz/</div></div></div><div class="vex">Doctors on our ward aren't allowed to wear jeans under the coat.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-jacket.jpg" alt="jacket" loading="lazy"><div class="voverlay"><div class="vw">jacket</div><div class="vm">a short coat worn over a shirt or top</div><div class="vipa">/ˈdʒækɪt/</div></div></div><div class="vex">He threw on a leather jacket and left the hospital.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-tshirt.jpg" alt="T-shirt" loading="lazy"><div class="voverlay"><div class="vw">T-shirt</div><div class="vm">a simple, short-sleeved cotton top with no collar</div><div class="vipa">/ˈtiː ʃɜːt/</div></div></div><div class="vex">A plain white T-shirt goes with almost everything.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-poloshirt.jpg" alt="polo shirt" loading="lazy"><div class="voverlay"><div class="vw">polo shirt</div><div class="vm">a casual shirt with a collar and a few buttons at the neck</div><div class="vipa">/ˈpəʊləʊ ʃɜːt/</div></div></div><div class="vex">Our clinic staff wear a blue polo shirt with the logo.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-top.jpg" alt="top" loading="lazy"><div class="voverlay"><div class="vw">top</div><div class="vm">a piece of clothing that covers the upper body</div><div class="vipa">/tɒp/</div></div></div><div class="vex">She was wearing a black top and a long skirt.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-shorts.jpg" alt="shorts" loading="lazy"><div class="voverlay"><div class="vw">shorts</div><div class="vm">trousers that stop above or at the knee</div><div class="vipa">/ʃɔːts/</div></div></div><div class="vex">Shorts are fine at the beach, not at the conference dinner.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-dress.jpg" alt="dress" loading="lazy"><div class="voverlay"><div class="vw">dress</div><div class="vm">a piece of women's clothing that covers the body and forms a skirt</div><div class="vipa">/dres/</div></div></div><div class="vex">My wife bought a new dress for the wedding.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-jumper.jpg" alt="jumper" loading="lazy"><div class="voverlay"><div class="vw">jumper</div><div class="vm">a warm knitted top, pulled on over the head</div><div class="vipa">/ˈdʒʌmpə/</div></div></div><div class="vex">In winter I wear a jumper under my white coat.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-shirt.jpg" alt="shirt" loading="lazy"><div class="voverlay"><div class="vw">shirt</div><div class="vm">a top with a collar, sleeves and buttons down the front</div><div class="vipa">/ʃɜːt/</div></div></div><div class="vex">A clean shirt every morning is part of the job.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-tie.jpg" alt="tie" loading="lazy"><div class="voverlay"><div class="vw">tie</div><div class="vm">a narrow strip of fabric worn under a shirt collar, tied in a knot</div><div class="vipa">/taɪ/</div></div></div><div class="vex">Many hospitals have banned ties for hygiene reasons.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-shawl.jpg" alt="shawl" loading="lazy"><div class="voverlay"><div class="vw">shawl</div><div class="vm">a piece of fabric worn around the shoulders or head for warmth</div><div class="vipa">/ʃɔːl/</div></div></div><div class="vex">The elderly patient had a woollen shawl round her shoulders.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-outfit.jpg" alt="outfit" loading="lazy"><div class="voverlay"><div class="vw">outfit</div><div class="vm">a complete set of clothes worn together</div><div class="vipa">/ˈaʊtfɪt/</div></div></div><div class="vex">I planned my outfit for the presentation the night before.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-gear.jpg" alt="gear" loading="lazy"><div class="voverlay"><div class="vw">gear</div><div class="vm">the clothes or equipment needed for a particular activity</div><div class="vipa">/ɡɪə/</div></div></div><div class="vex">The biker arrived at A&amp;E still wearing all his gear.</div></div>
+        <div class="vgrid" style="--vcols:5">
+          <div class="vcard"><div class="vmedia"><img src="img/v-suit.jpg" alt="suit" loading="lazy"><div class="voverlay"><div class="vw">suit</div><div class="vm">a suit</div><div class="vipa">/suːt/</div></div></div><div class="vex">I only wear a suit for conferences and job interviews.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-sweatshirt.jpg" alt="sweatshirt" loading="lazy"><div class="voverlay"><div class="vw">sweatshirt</div><div class="vm">a sweatshirt</div><div class="vipa">/ˈswetʃɜːt/</div></div></div><div class="vex">After a night shift I just want a sweatshirt and a coffee.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-jeans.jpg" alt="jeans" loading="lazy"><div class="voverlay"><div class="vw">jeans</div><div class="vm">jeans</div><div class="vipa">/dʒiːnz/</div></div></div><div class="vex">Doctors on our ward aren't allowed to wear jeans under the coat.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-jacket.jpg" alt="jacket" loading="lazy"><div class="voverlay"><div class="vw">jacket</div><div class="vm">a jacket</div><div class="vipa">/ˈdʒækɪt/</div></div></div><div class="vex">He threw on a leather jacket and left the hospital.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-tshirt.jpg" alt="T-shirt" loading="lazy"><div class="voverlay"><div class="vw">T-shirt</div><div class="vm">a T-shirt</div><div class="vipa">/ˈtiː ʃɜːt/</div></div></div><div class="vex">A plain white T-shirt goes with almost everything.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-poloshirt.jpg" alt="polo shirt" loading="lazy"><div class="voverlay"><div class="vw">polo shirt</div><div class="vm">a polo shirt</div><div class="vipa">/ˈpəʊləʊ ʃɜːt/</div></div></div><div class="vex">Our clinic staff wear a blue polo shirt with the logo.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-top.jpg" alt="top" loading="lazy"><div class="voverlay"><div class="vw">top</div><div class="vm">a top</div><div class="vipa">/tɒp/</div></div></div><div class="vex">She was wearing a black top and a long skirt.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-shorts.jpg" alt="shorts" loading="lazy"><div class="voverlay"><div class="vw">shorts</div><div class="vm">shorts</div><div class="vipa">/ʃɔːts/</div></div></div><div class="vex">Shorts are fine at the beach, not at the conference dinner.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-dress.jpg" alt="dress" loading="lazy"><div class="voverlay"><div class="vw">dress</div><div class="vm">a dress</div><div class="vipa">/dres/</div></div></div><div class="vex">My wife bought a new dress for the wedding.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-jumper.jpg" alt="jumper" loading="lazy"><div class="voverlay"><div class="vw">jumper</div><div class="vm">a jumper</div><div class="vipa">/ˈdʒʌmpə/</div></div></div><div class="vex">In winter I wear a jumper under my white coat.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-shirt.jpg" alt="shirt" loading="lazy"><div class="voverlay"><div class="vw">shirt</div><div class="vm">a shirt</div><div class="vipa">/ʃɜːt/</div></div></div><div class="vex">A clean shirt every morning is part of the job.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-tie.jpg" alt="tie" loading="lazy"><div class="voverlay"><div class="vw">tie</div><div class="vm">a tie</div><div class="vipa">/taɪ/</div></div></div><div class="vex">Many hospitals have banned ties for hygiene reasons.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-shawl.jpg" alt="shawl" loading="lazy"><div class="voverlay"><div class="vw">shawl</div><div class="vm">a shawl</div><div class="vipa">/ʃɔːl/</div></div></div><div class="vex">The elderly patient had a woollen shawl round her shoulders.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-outfit.jpg" alt="outfit" loading="lazy"><div class="voverlay"><div class="vw">outfit</div><div class="vm">an outfit</div><div class="vipa">/ˈaʊtfɪt/</div></div></div><div class="vex">I planned my outfit for the presentation the night before.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-gear.jpg" alt="gear" loading="lazy"><div class="voverlay"><div class="vw">gear</div><div class="vm">gear</div><div class="vipa">/ɡɪə/</div></div></div><div class="vex">The biker arrived at A&amp;E still wearing all his gear.</div></div>
         </div>
         <div class="sub-h">Footwear</div>
-        <div class="vgrid">
-          <div class="vcard"><div class="vmedia"><img src="img/v-boots.jpg" alt="boots" loading="lazy"><div class="voverlay"><div class="vw">boots</div><div class="vm">shoes that cover the foot and ankle, or higher</div><div class="vipa">/buːts/</div></div></div><div class="vex">Leather boots are warm but hard to clean.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-sandals.jpg" alt="sandals" loading="lazy"><div class="voverlay"><div class="vw">sandals</div><div class="vm">light, open shoes with straps, worn in warm weather</div><div class="vipa">/ˈsændlz/</div></div></div><div class="vex">Sandals aren't allowed in theatre — your feet need protection.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-trainers.jpg" alt="trainers" loading="lazy"><div class="voverlay"><div class="vw">trainers</div><div class="vm">soft, comfortable shoes designed for sport or casual wear</div><div class="vipa">/ˈtreɪnəz/</div></div></div><div class="vex">Most nurses wear white trainers on a twelve-hour shift.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-highheels.jpg" alt="high-heeled shoes" loading="lazy"><div class="voverlay"><div class="vw">high-heeled shoes</div><div class="vm">shoes with a raised heel, usually formal or dressy</div><div class="vipa">/ˌhaɪ hiːld ˈʃuːz/</div></div></div><div class="vex">High-heeled shoes look elegant but they're not practical on a ward.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-flipflops.jpg" alt="flip flops" loading="lazy"><div class="voverlay"><div class="vw">flip flops</div><div class="vm">very simple sandals held on by a strap between the toes</div><div class="vipa">/ˈflɪp flɒps/</div></div></div><div class="vex">The patient came in wearing flip flops in the middle of winter.</div></div>
+        <div class="vgrid" style="--vcols:5">
+          <div class="vcard"><div class="vmedia"><img src="img/v-boots.jpg" alt="boots" loading="lazy"><div class="voverlay"><div class="vw">boots</div><div class="vm">boots</div><div class="vipa">/buːts/</div></div></div><div class="vex">Leather boots are warm but hard to clean.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-sandals.jpg" alt="sandals" loading="lazy"><div class="voverlay"><div class="vw">sandals</div><div class="vm">sandals</div><div class="vipa">/ˈsændlz/</div></div></div><div class="vex">Sandals aren't allowed in theatre — your feet need protection.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-trainers.jpg" alt="trainers" loading="lazy"><div class="voverlay"><div class="vw">trainers</div><div class="vm">trainers</div><div class="vipa">/ˈtreɪnəz/</div></div></div><div class="vex">Most nurses wear white trainers on a twelve-hour shift.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-highheels.jpg" alt="high-heeled shoes" loading="lazy"><div class="voverlay"><div class="vw">high-heeled shoes</div><div class="vm">high-heeled shoes</div><div class="vipa">/ˌhaɪ hiːld ˈʃuːz/</div></div></div><div class="vex">High-heeled shoes look elegant but they're not practical on a ward.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-flipflops.jpg" alt="flip flops" loading="lazy"><div class="voverlay"><div class="vw">flip flops</div><div class="vm">flip flops</div><div class="vipa">/ˈflɪp flɒps/</div></div></div><div class="vex">The patient came in wearing flip flops in the middle of winter.</div></div>
         </div>
         <div class="sub-h">Jewellery &amp; headwear</div>
-        <div class="vgrid">
-          <div class="vcard"><div class="vmedia"><img src="img/v-bracelet.jpg" alt="bracelet" loading="lazy"><div class="voverlay"><div class="vw">bracelet</div><div class="vm">a piece of jewellery worn around the wrist</div><div class="vipa">/ˈbreɪslət/</div></div></div><div class="vex">Please take your bracelet off before the X-ray.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-earrings.jpg" alt="earrings" loading="lazy"><div class="voverlay"><div class="vw">earrings</div><div class="vm">jewellery worn on the ears</div><div class="vipa">/ˈɪərɪŋz/</div></div></div><div class="vex">Small earrings are fine; long ones can catch on your mask.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-necklace.jpg" alt="necklace" loading="lazy"><div class="voverlay"><div class="vw">necklace</div><div class="vm">a piece of jewellery worn around the neck</div><div class="vipa">/ˈnekləs/</div></div></div><div class="vex">She keeps her necklace in her locker during surgery.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-ring.jpg" alt="ring" loading="lazy"><div class="voverlay"><div class="vw">ring</div><div class="vm">a piece of jewellery worn on a finger</div><div class="vipa">/rɪŋ/</div></div></div><div class="vex">Rings carry bacteria, so we're bare below the elbow on the wards.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-hood.jpg" alt="hood" loading="lazy"><div class="voverlay"><div class="vw">hood</div><div class="vm">a covering for the head, attached to a coat or jumper</div><div class="vipa">/hʊd/</div></div></div><div class="vex">He pulled his hood up because it was raining.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-helmet.jpg" alt="helmet" loading="lazy"><div class="voverlay"><div class="vw">helmet</div><div class="vm">a hard hat worn to protect the head</div><div class="vipa">/ˈhelmɪt/</div></div></div><div class="vex">A helmet is by far the most important thing a biker wears.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-hat.jpg" alt="hat" loading="lazy"><div class="voverlay"><div class="vw">hat</div><div class="vm">a covering for the head, often with a brim</div><div class="vipa">/hæt/</div></div></div><div class="vex">Wear a hat in the sun — I say that to patients all summer.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-baseballcap.jpg" alt="baseball cap" loading="lazy"><div class="voverlay"><div class="vw">baseball cap</div><div class="vm">a soft cap with a curved brim at the front</div><div class="vipa">/ˈbeɪsbɔːl kæp/</div></div></div><div class="vex">My son wears his baseball cap back to front.</div></div>
+        <div class="vgrid" style="--vcols:4">
+          <div class="vcard"><div class="vmedia"><img src="img/v-bracelet.jpg" alt="bracelet" loading="lazy"><div class="voverlay"><div class="vw">bracelet</div><div class="vm">a bracelet</div><div class="vipa">/ˈbreɪslət/</div></div></div><div class="vex">Please take your bracelet off before the X-ray.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-earrings.jpg" alt="earrings" loading="lazy"><div class="voverlay"><div class="vw">earrings</div><div class="vm">hoa tai</div><div class="vipa">/ˈɪərɪŋz/</div></div></div><div class="vex">Small earrings are fine; long ones can catch on your mask.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-necklace.jpg" alt="necklace" loading="lazy"><div class="voverlay"><div class="vw">necklace</div><div class="vm">a necklace</div><div class="vipa">/ˈnekləs/</div></div></div><div class="vex">She keeps her necklace in her locker during surgery.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-ring.jpg" alt="ring" loading="lazy"><div class="voverlay"><div class="vw">ring</div><div class="vm">a ring</div><div class="vipa">/rɪŋ/</div></div></div><div class="vex">Rings carry bacteria, so we're bare below the elbow on the wards.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-hood.jpg" alt="hood" loading="lazy"><div class="voverlay"><div class="vw">hood</div><div class="vm">a hood</div><div class="vipa">/hʊd/</div></div></div><div class="vex">He pulled his hood up because it was raining.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-helmet.jpg" alt="helmet" loading="lazy"><div class="voverlay"><div class="vw">helmet</div><div class="vm">a helmet</div><div class="vipa">/ˈhelmɪt/</div></div></div><div class="vex">A helmet is by far the most important thing a biker wears.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-hat.jpg" alt="hat" loading="lazy"><div class="voverlay"><div class="vw">hat</div><div class="vm">a hat</div><div class="vipa">/hæt/</div></div></div><div class="vex">Wear a hat in the sun — I say that to patients all summer.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-baseballcap.jpg" alt="baseball cap" loading="lazy"><div class="voverlay"><div class="vw">baseball cap</div><div class="vm">a baseball cap</div><div class="vipa">/ˈbeɪsbɔːl kæp/</div></div></div><div class="vex">My son wears his baseball cap back to front.</div></div>
         </div>
         <div class="sub-h">Materials</div>
-        <div class="vgrid">
-          <div class="vcard"><div class="vmedia"><img src="img/v-woollen.jpg" alt="woollen" loading="lazy"><div class="voverlay"><div class="vw">woollen</div><div class="vm">made from wool, warm and often knitted</div><div class="vipa">/ˈwʊlən/</div></div></div><div class="vex">A woollen scarf is all you need in Hanoi in January.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-leather.jpg" alt="leather" loading="lazy"><div class="voverlay"><div class="vw">leather</div><div class="vm">material made from animal skin</div><div class="vipa">/ˈleðə/</div></div></div><div class="vex">Good leather shoes last for years if you look after them.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-cotton.jpg" alt="cotton" loading="lazy"><div class="voverlay"><div class="vw">cotton</div><div class="vm">a light, natural fabric made from the cotton plant</div><div class="vipa">/ˈkɒtn/</div></div></div><div class="vex">Cotton is far more comfortable than polyester in the heat.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-silk.jpg" alt="silk" loading="lazy"><div class="voverlay"><div class="vw">silk</div><div class="vm">a smooth, delicate fabric made from silkworms</div><div class="vipa">/sɪlk/</div></div></div><div class="vex">The ao dai was made of pure silk.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-polyester.jpg" alt="polyester" loading="lazy"><div class="voverlay"><div class="vw">polyester</div><div class="vm">a man-made fabric, often cheap and hard-wearing</div><div class="vipa">/ˌpɒliˈestə/</div></div></div><div class="vex">Most scrubs are a cotton-polyester mix.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-suede.jpg" alt="suede" loading="lazy"><div class="voverlay"><div class="vw">suede</div><div class="vm">soft leather with a slightly rough surface</div><div class="vipa">/sweɪd/</div></div></div><div class="vex">Don't wear suede shoes on a rainy day.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-fur.jpg" alt="fur" loading="lazy"><div class="voverlay"><div class="vw">fur</div><div class="vm">the soft hair covering an animal's skin, or fabric made to look like it</div><div class="vipa">/fɜː/</div></div></div><div class="vex">Real fur is far less popular than it used to be.</div></div>
+        <div class="vgrid" style="--vcols:4">
+          <div class="vcard"><div class="vmedia"><img src="img/v-woollen.jpg" alt="woollen" loading="lazy"><div class="voverlay"><div class="vw">woollen</div><div class="vm">woollen</div><div class="vipa">/ˈwʊlən/</div></div></div><div class="vex">A woollen scarf is all you need in Hanoi in January.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-leather.jpg" alt="leather" loading="lazy"><div class="voverlay"><div class="vw">leather</div><div class="vm">leather</div><div class="vipa">/ˈleðə/</div></div></div><div class="vex">Good leather shoes last for years if you look after them.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-cotton.jpg" alt="cotton" loading="lazy"><div class="voverlay"><div class="vw">cotton</div><div class="vm">cotton</div><div class="vipa">/ˈkɒtn/</div></div></div><div class="vex">Cotton is far more comfortable than polyester in the heat.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-silk.jpg" alt="silk" loading="lazy"><div class="voverlay"><div class="vw">silk</div><div class="vm">silk</div><div class="vipa">/sɪlk/</div></div></div><div class="vex">The ao dai was made of pure silk.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-polyester.jpg" alt="polyester" loading="lazy"><div class="voverlay"><div class="vw">polyester</div><div class="vm">polyester</div><div class="vipa">/ˌpɒliˈestə/</div></div></div><div class="vex">Most scrubs are a cotton-polyester mix.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-suede.jpg" alt="suede" loading="lazy"><div class="voverlay"><div class="vw">suede</div><div class="vm">suede</div><div class="vipa">/sweɪd/</div></div></div><div class="vex">Don't wear suede shoes on a rainy day.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-fur.jpg" alt="fur" loading="lazy"><div class="voverlay"><div class="vw">fur</div><div class="vm">fur</div><div class="vipa">/fɜː/</div></div></div><div class="vex">Real fur is far less popular than it used to be.</div></div>
         </div>
         <div class="sub-h">Cut &amp; pattern</div>
-        <div class="vgrid">
-          <div class="vcard"><div class="vmedia"><img src="img/v-striped.jpg" alt="striped" loading="lazy"><div class="voverlay"><div class="vw">striped</div><div class="vm">having lines of colour running across the fabric</div><div class="vipa">/straɪpt/</div></div></div><div class="vex">He was wearing a striped jumper and faded jeans.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-faded.jpg" alt="faded" loading="lazy"><div class="voverlay"><div class="vw">faded</div><div class="vm">with the colour lightened, usually after a lot of washing or wear</div><div class="vipa">/ˈfeɪdɪd/</div></div></div><div class="vex">These faded jeans are ten years old and still my favourite.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-knitted.jpg" alt="knitted" loading="lazy"><div class="voverlay"><div class="vw">knitted</div><div class="vm">made by looping wool or yarn together</div><div class="vipa">/ˈnɪtɪd/</div></div></div><div class="vex">My grandmother made me a knitted hat every winter.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-sparkly.jpg" alt="sparkly" loading="lazy"><div class="voverlay"><div class="vw">sparkly</div><div class="vm">shining brightly with lots of small points of light</div><div class="vipa">/ˈspɑːkli/</div></div></div><div class="vex">She slipped on a sparkly top for the party.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-secondhand.jpg" alt="second-hand" loading="lazy"><div class="voverlay"><div class="vw">second-hand</div><div class="vm">not new, previously owned by someone else</div><div class="vipa">/ˌsekənd ˈhænd/</div></div></div><div class="vex">Second-hand clothes can be real bargains.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-openneck.jpg" alt="open-necked" loading="lazy"><div class="voverlay"><div class="vw">open-necked</div><div class="vm">worn with the top button undone, no tie</div><div class="vipa">/ˌəʊpən ˈnekt/</div></div></div><div class="vex">An open-necked shirt is smart enough for the clinic.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-shortsleeved.jpg" alt="short-sleeved" loading="lazy"><div class="voverlay"><div class="vw">short-sleeved</div><div class="vm">with sleeves that end above the elbow</div><div class="vipa">/ˌʃɔːt ˈsliːvd/</div></div></div><div class="vex">Short-sleeved shirts are part of the hospital dress code.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-vneck.jpg" alt="V-neck" loading="lazy"><div class="voverlay"><div class="vw">V-neck</div><div class="vm">with a collar shaped like the letter V</div><div class="vipa">/ˈviː nek/</div></div></div><div class="vex">He wore a V-neck jumper over an open-necked shirt.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-kneelength.jpg" alt="knee-length" loading="lazy"><div class="voverlay"><div class="vw">knee-length</div><div class="vm">long enough to reach the knee</div><div class="vipa">/ˈniː leŋθ/</div></div></div><div class="vex">Knee-length boots with stars on — that was Sally's outfit.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-handmade.jpg" alt="handmade" loading="lazy"><div class="voverlay"><div class="vw">handmade</div><div class="vm">made by hand rather than by machine</div><div class="vipa">/ˌhændˈmeɪd/</div></div></div><div class="vex">A handmade leather bag costs more but lasts a lifetime.</div></div>
+        <div class="vgrid" style="--vcols:5">
+          <div class="vcard"><div class="vmedia"><img src="img/v-striped.jpg" alt="striped" loading="lazy"><div class="voverlay"><div class="vw">striped</div><div class="vm">striped</div><div class="vipa">/straɪpt/</div></div></div><div class="vex">He was wearing a striped jumper and faded jeans.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-faded.jpg" alt="faded" loading="lazy"><div class="voverlay"><div class="vw">faded</div><div class="vm">faded</div><div class="vipa">/ˈfeɪdɪd/</div></div></div><div class="vex">These faded jeans are ten years old and still my favourite.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-knitted.jpg" alt="knitted" loading="lazy"><div class="voverlay"><div class="vw">knitted</div><div class="vm">knitted</div><div class="vipa">/ˈnɪtɪd/</div></div></div><div class="vex">My grandmother made me a knitted hat every winter.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-sparkly.jpg" alt="sparkly" loading="lazy"><div class="voverlay"><div class="vw">sparkly</div><div class="vm">sparkly</div><div class="vipa">/ˈspɑːkli/</div></div></div><div class="vex">She slipped on a sparkly top for the party.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-secondhand.jpg" alt="second-hand" loading="lazy"><div class="voverlay"><div class="vw">second-hand</div><div class="vm">second-hand</div><div class="vipa">/ˌsekənd ˈhænd/</div></div></div><div class="vex">Second-hand clothes can be real bargains.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-openneck.jpg" alt="open-necked" loading="lazy"><div class="voverlay"><div class="vw">open-necked</div><div class="vm">open-necked</div><div class="vipa">/ˌəʊpən ˈnekt/</div></div></div><div class="vex">An open-necked shirt is smart enough for the clinic.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-shortsleeved.jpg" alt="short-sleeved" loading="lazy"><div class="voverlay"><div class="vw">short-sleeved</div><div class="vm">short-sleeved</div><div class="vipa">/ˌʃɔːt ˈsliːvd/</div></div></div><div class="vex">Short-sleeved shirts are part of the hospital dress code.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-vneck.jpg" alt="V-neck" loading="lazy"><div class="voverlay"><div class="vw">V-neck</div><div class="vm">V-neck</div><div class="vipa">/ˈviː nek/</div></div></div><div class="vex">He wore a V-neck jumper over an open-necked shirt.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-kneelength.jpg" alt="knee-length" loading="lazy"><div class="voverlay"><div class="vw">knee-length</div><div class="vm">knee-length</div><div class="vipa">/ˈniː leŋθ/</div></div></div><div class="vex">Knee-length boots with stars on — that was Sally's outfit.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-handmade.jpg" alt="handmade" loading="lazy"><div class="voverlay"><div class="vw">handmade</div><div class="vm">handmade</div><div class="vipa">/ˌhændˈmeɪd/</div></div></div><div class="vex">A handmade leather bag costs more but lasts a lifetime.</div></div>
         </div>
       </div>
       <div class="tier adv"><div class="tier-h">Advanced</div>
         <div class="sub-h">Workplace clothing</div>
         <div class="tablewrap"><table class="vt"><tbody>
-          <tr><td>wear a white coat (over …)<span class="ipa">/ˌwaɪt ˈkəʊt/</span></td><td>to wear a doctor's white coat on top of your clothes</td><td><i>On the ward round, every doctor has to wear a white coat over their own clothes.</i></td></tr>
-          <tr><td>change into scrubs<span class="ipa">/skrʌbz/</span></td><td>to put on hospital surgical clothing</td><td><i>Surgeons change into scrubs before they go into theatre.</i></td></tr>
-          <tr><td>wear a uniform<span class="ipa">/ˈjuːnɪfɔːm/</span></td><td>to wear the official clothing required for a job</td><td><i>Nurses at our hospital wear a light-blue uniform.</i></td></tr>
+          <tr><td>wear a white coat (over …)<span class="ipa">/ˌwaɪt ˈkəʊt/</span></td><td>wear a white coat (over …)</td><td><i>On the ward round, every doctor has to wear a white coat over their own clothes.</i></td></tr>
+          <tr><td>change into scrubs<span class="ipa">/skrʌbz/</span></td><td>change into scrubs</td><td><i>Surgeons change into scrubs before they go into theatre.</i></td></tr>
+          <tr><td>wear a uniform<span class="ipa">/ˈjuːnɪfɔːm/</span></td><td>wear a uniform</td><td><i>Nurses at our hospital wear a light-blue uniform.</i></td></tr>
         </tbody></table></div>
         <div class="sub-h">Fit &amp; quality</div>
         <div class="tablewrap"><table class="vt"><tbody>
-          <tr><td>loose-fitting / tight-fitting</td><td>not close-fitting / close to the body</td><td><i>Loose-fitting cotton trousers are far more comfortable on a twelve-hour shift.</i></td></tr>
-          <tr><td>plain / patterned<span class="ipa">/ˈpætənd/</span></td><td>with no design / with a decorative design</td><td><i>A plain shirt looks more professional than a patterned one at a conference.</i></td></tr>
-          <tr><td>badly made / well-made</td><td>made carelessly, poor quality / made with skill and care</td><td><i>The jacket was so badly made that I took it back the next day.</i></td></tr>
+          <tr><td>loose-fitting / tight-fitting</td><td>loose-fitting / tight-fitting</td><td><i>Loose-fitting cotton trousers are far more comfortable on a twelve-hour shift.</i></td></tr>
+          <tr><td>plain / patterned<span class="ipa">/ˈpætənd/</span></td><td>plain / patterned</td><td><i>A plain shirt looks more professional than a patterned one at a conference.</i></td></tr>
+          <tr><td>badly made / well-made</td><td>badly made / well-made</td><td><i>The jacket was so badly made that I took it back the next day.</i></td></tr>
         </tbody></table></div>
       </div>
       <div class="tier col"><div class="tier-h">Collocations</div>
         <div class="tablewrap"><table class="vt"><tbody>
-          <tr><td>be dressed in + clothes</td><td>to be wearing a particular item of clothing</td><td><i>The patient was dressed in a hospital gown and a pair of slippers.</i></td></tr>
-          <tr><td>go with (something)</td><td>to match or look good together with something else</td><td><i>That bright tie doesn't really go with a white coat.</i></td></tr>
-          <tr><td>suit somebody</td><td>to make someone look good</td><td><i>Dark colours suit you much better than bright ones.</i></td></tr>
-          <tr><td>fit somebody</td><td>to be the right size for someone</td><td><i>The scrubs they gave me didn't fit — the trousers were far too long.</i></td></tr>
-          <tr><td>a pair of + jeans / trousers / shoes</td><td>used before items that come in two matching parts</td><td><i>I keep a spare pair of trousers in my locker in case of emergencies.</i></td></tr>
+          <tr><td>be dressed in + clothes</td><td>to be wearing … (description)</td><td><i>The patient was dressed in a hospital gown and a pair of slippers.</i></td></tr>
+          <tr><td>go with (something)</td><td>to go with (a colour, another item)</td><td><i>That bright tie doesn't really go with a white coat.</i></td></tr>
+          <tr><td>suit somebody</td><td>to suit somebody</td><td><i>Dark colours suit you much better than bright ones.</i></td></tr>
+          <tr><td>fit somebody</td><td>to fit somebody</td><td><i>The scrubs they gave me didn't fit — the trousers were far too long.</i></td></tr>
+          <tr><td>a pair of + jeans / trousers / shoes</td><td>a piece / a pair</td><td><i>I keep a spare pair of trousers in my locker in case of emergencies.</i></td></tr>
         </tbody></table></div>
       </div>
     </div>
@@ -783,52 +784,52 @@
     <div class="tiers">
       <div class="tier core"><div class="tier-h">Core · SB Unit 1</div>
         <div class="sub-h">Six styles</div>
-        <div class="vgrid">
-          <div class="vcard"><div class="vmedia"><img src="img/v-casual.jpg" alt="casual" loading="lazy"><div class="voverlay"><div class="vw">casual</div><div class="vm">relaxed and informal, for everyday wear</div><div class="vipa">/ˈkæʒuəl/</div></div></div><div class="vex">I prefer casual clothes at the weekend.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-smart.jpg" alt="smart" loading="lazy"><div class="voverlay"><div class="vw">smart</div><div class="vm">neat, clean and well put-together</div><div class="vipa">/smɑːt/</div></div></div><div class="vex">You need to look smart for the interview.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-elegant.jpg" alt="elegant" loading="lazy"><div class="voverlay"><div class="vw">elegant</div><div class="vm">graceful and stylish in a refined way</div><div class="vipa">/ˈelɪɡənt/</div></div></div><div class="vex">Her dress was simple but very elegant.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-scruffy.jpg" alt="scruffy" loading="lazy"><div class="voverlay"><div class="vw">scruffy</div><div class="vm">untidy and slightly dirty-looking</div><div class="vipa">/ˈskrʌfi/</div></div></div><div class="vex">He looked scruffy after three days on call.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-outrageous.jpg" alt="outrageous" loading="lazy"><div class="voverlay"><div class="vw">outrageous</div><div class="vm">shockingly unusual or over the top</div><div class="vipa">/aʊtˈreɪdʒəs/</div></div></div><div class="vex">Sally put together the most outrageous outfit for the party.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-fashionable.jpg" alt="fashionable" loading="lazy"><div class="voverlay"><div class="vw">fashionable</div><div class="vm">in style, currently popular</div><div class="vipa">/ˈfæʃnəbl/</div></div></div><div class="vex">Big sunglasses are fashionable again this year.</div></div>
+        <div class="vgrid" style="--vcols:6">
+          <div class="vcard"><div class="vmedia"><img src="img/v-casual.jpg" alt="casual" loading="lazy"><div class="voverlay"><div class="vw">casual</div><div class="vm">casual</div><div class="vipa">/ˈkæʒuəl/</div></div></div><div class="vex">I prefer casual clothes at the weekend.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-smart.jpg" alt="smart" loading="lazy"><div class="voverlay"><div class="vw">smart</div><div class="vm">smart</div><div class="vipa">/smɑːt/</div></div></div><div class="vex">You need to look smart for the interview.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-elegant.jpg" alt="elegant" loading="lazy"><div class="voverlay"><div class="vw">elegant</div><div class="vm">elegant</div><div class="vipa">/ˈelɪɡənt/</div></div></div><div class="vex">Her dress was simple but very elegant.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-scruffy.jpg" alt="scruffy" loading="lazy"><div class="voverlay"><div class="vw">scruffy</div><div class="vm">scruffy</div><div class="vipa">/ˈskrʌfi/</div></div></div><div class="vex">He looked scruffy after three days on call.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-outrageous.jpg" alt="outrageous" loading="lazy"><div class="voverlay"><div class="vw">outrageous</div><div class="vm">outrageous</div><div class="vipa">/aʊtˈreɪdʒəs/</div></div></div><div class="vex">Sally put together the most outrageous outfit for the party.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-fashionable.jpg" alt="fashionable" loading="lazy"><div class="voverlay"><div class="vw">fashionable</div><div class="vm">fashionable</div><div class="vipa">/ˈfæʃnəbl/</div></div></div><div class="vex">Big sunglasses are fashionable again this year.</div></div>
         </div>
         <div class="sub-h">Other adjectives</div>
         <div class="vadjgrid">
-          <div class="vadjcard"><div class="vw">stylish</div><div class="vm">fashionable and attractive</div><div class="vipa">/ˈstaɪlɪʃ/</div><div class="vex">Clothes need to be comfortable as well as stylish.</div></div>
-          <div class="vadjcard"><div class="vw">comfortable</div><div class="vm">pleasant to wear, not tight or restrictive</div><div class="vipa">/ˈkʌmftəbl/</div><div class="vex">My clothes have to be comfortable — I'm on my feet all day.</div></div>
-          <div class="vadjcard"><div class="vw">practical</div><div class="vm">useful and sensible for everyday needs</div><div class="vipa">/ˈpræktɪkl/</div><div class="vex">Trainers are more practical than high heels on a ward.</div></div>
-          <div class="vadjcard"><div class="vw">untidy</div><div class="vm">not neat, in a messy state</div><div class="vipa">/ʌnˈtaɪdi/</div><div class="vex">His hair was untidy and his shirt wasn't ironed.</div></div>
-          <div class="vadjcard"><div class="vw">tatty</div><div class="vm">old and damaged from a lot of use</div><div class="vipa">/ˈtæti/</div><div class="vex">My friends sometimes wear the tattiest things ever.</div></div>
-          <div class="vadjcard"><div class="vw">classy</div><div class="vm">elegant and of high quality</div><div class="vipa">/ˈklɑːsi/</div><div class="vex">She likes to present a classy image at work.</div></div>
-          <div class="vadjcard"><div class="vw">sophisticated</div><div class="vm">stylish in a complex, refined way</div><div class="vipa">/səˈfɪstɪkeɪtɪd/</div><div class="vex">A dark suit gives a sophisticated look.</div></div>
-          <div class="vadjcard"><div class="vw">laid-back</div><div class="vm">relaxed and not too formal about things</div><div class="vipa">/ˌleɪd ˈbæk/</div><div class="vex">He looks friendly and laid-back in jeans and a jumper.</div></div>
-          <div class="vadjcard"><div class="vw">fashion-conscious</div><div class="vm">very aware of and interested in current fashion</div><div class="vipa">/ˈfæʃn ˌkɒnʃəs/</div><div class="vex">I'm the least fashion-conscious person I know.</div></div>
-          <div class="vadjcard"><div class="vw">ordinary</div><div class="vm">simple, without decoration, nothing special</div><div class="vipa">/ˈɔːdnri/</div><div class="vex">I looked very ordinary in comparison with them.</div></div>
-          <div class="vadjcard"><div class="vw">cool</div><div class="vm">fashionable and impressive (informal)</div><div class="vipa">/kuːl/</div><div class="vex">This girl looks really cool with her blue and green outfit.</div></div>
-          <div class="vadjcard"><div class="vw">look smart · casually dressed · dressed up for a special event</div><div class="vm">neatly and correctly dressed · in relaxed everyday clothes · specially smart for an occasion</div><div class="vex">Even for work I like my clothes to look smart.</div></div>
-          <div class="vadjcard"><div class="vw">(good) taste · image · bright colours · in comparison</div><div class="vm">a sense of what looks good · the impression you give · vivid, eye-catching colours · when compared with something else</div><div class="vex">My brother has the worst taste in ties ever.</div></div>
+          <div class="vadjcard"><div class="vw">stylish</div><div class="vm">stylish</div><div class="vipa">/ˈstaɪlɪʃ/</div><div class="vex">Clothes need to be comfortable as well as stylish.</div></div>
+          <div class="vadjcard"><div class="vw">comfortable</div><div class="vm">comfortable</div><div class="vipa">/ˈkʌmftəbl/</div><div class="vex">My clothes have to be comfortable — I'm on my feet all day.</div></div>
+          <div class="vadjcard"><div class="vw">practical</div><div class="vm">practical</div><div class="vipa">/ˈpræktɪkl/</div><div class="vex">Trainers are more practical than high heels on a ward.</div></div>
+          <div class="vadjcard"><div class="vw">untidy</div><div class="vm">untidy</div><div class="vipa">/ʌnˈtaɪdi/</div><div class="vex">His hair was untidy and his shirt wasn't ironed.</div></div>
+          <div class="vadjcard"><div class="vw">tatty</div><div class="vm">worn-out</div><div class="vipa">/ˈtæti/</div><div class="vex">My friends sometimes wear the tattiest things ever.</div></div>
+          <div class="vadjcard"><div class="vw">classy</div><div class="vm">classy</div><div class="vipa">/ˈklɑːsi/</div><div class="vex">She likes to present a classy image at work.</div></div>
+          <div class="vadjcard"><div class="vw">sophisticated</div><div class="vm">sophisticated</div><div class="vipa">/səˈfɪstɪkeɪtɪd/</div><div class="vex">A dark suit gives a sophisticated look.</div></div>
+          <div class="vadjcard"><div class="vw">laid-back</div><div class="vm">laid-back</div><div class="vipa">/ˌleɪd ˈbæk/</div><div class="vex">He looks friendly and laid-back in jeans and a jumper.</div></div>
+          <div class="vadjcard"><div class="vw">fashion-conscious</div><div class="vm">fashion-conscious</div><div class="vipa">/ˈfæʃn ˌkɒnʃəs/</div><div class="vex">I'm the least fashion-conscious person I know.</div></div>
+          <div class="vadjcard"><div class="vw">ordinary</div><div class="vm">plain</div><div class="vipa">/ˈɔːdnri/</div><div class="vex">I looked very ordinary in comparison with them.</div></div>
+          <div class="vadjcard"><div class="vw">cool</div><div class="vm">cool</div><div class="vipa">/kuːl/</div><div class="vex">This girl looks really cool with her blue and green outfit.</div></div>
+          <div class="vadjcard"><div class="vw">look smart · casually dressed · dressed up for a special event</div><div class="vm">to look smart · to dress casually · to dress up for a special occasion</div><div class="vex">Even for work I like my clothes to look smart.</div></div>
+          <div class="vadjcard"><div class="vw">(good) taste · image · bright colours · in comparison</div><div class="vm">(good) taste · image · bright colours · in comparison</div><div class="vex">My brother has the worst taste in ties ever.</div></div>
         </div>
       </div>
       <div class="tier adv"><div class="tier-h">Advanced</div>
         <div class="sub-h">General impressions</div>
         <div class="tablewrap"><table class="vt"><tbody>
-          <tr><td>well-dressed<span class="ipa">/ˌwel ˈdrest/</span></td><td>wearing smart, attractive clothes</td><td><i>The new consultant is always well-dressed, even after a night on call.</i></td></tr>
-          <tr><td>presentable<span class="ipa">/prɪˈzentəbl/</span></td><td>neat and tidy enough to be seen in public</td><td><i>You don't need a suit — just look presentable when you meet the patient's family.</i></td></tr>
-          <tr><td>old-fashioned<span class="ipa">/ˌəʊld ˈfæʃnd/</span></td><td>no longer in style, out of date</td><td><i>My father's suits are a bit old-fashioned, but they're beautifully made.</i></td></tr>
+          <tr><td>well-dressed<span class="ipa">/ˌwel ˈdrest/</span></td><td>well-dressed</td><td><i>The new consultant is always well-dressed, even after a night on call.</i></td></tr>
+          <tr><td>presentable<span class="ipa">/prɪˈzentəbl/</span></td><td>presentable</td><td><i>You don't need a suit — just look presentable when you meet the patient's family.</i></td></tr>
+          <tr><td>old-fashioned<span class="ipa">/ˌəʊld ˈfæʃnd/</span></td><td>old-fashioned</td><td><i>My father's suits are a bit old-fashioned, but they're beautifully made.</i></td></tr>
         </tbody></table></div>
         <div class="sub-h">Style</div>
         <div class="tablewrap"><table class="vt"><tbody>
-          <tr><td>trendy<span class="ipa">/ˈtrendi/</span></td><td>very fashionable right now</td><td><i>Younger doctors tend to wear trendier glasses than the professors.</i></td></tr>
-          <tr><td>dress sense (U)</td><td>the ability to choose clothes that look good</td><td><i>My sister has far better dress sense than I do.</i></td></tr>
-          <tr><td>smart-casual</td><td>neat and stylish, but not fully formal</td><td><i>The conference dinner is smart-casual, so leave the tie at home.</i></td></tr>
+          <tr><td>trendy<span class="ipa">/ˈtrendi/</span></td><td>trendy</td><td><i>Younger doctors tend to wear trendier glasses than the professors.</i></td></tr>
+          <tr><td>dress sense (U)</td><td>sense of style</td><td><i>My sister has far better dress sense than I do.</i></td></tr>
+          <tr><td>smart-casual</td><td>smart but not too formal</td><td><i>The conference dinner is smart-casual, so leave the tie at home.</i></td></tr>
         </tbody></table></div>
       </div>
       <div class="tier col"><div class="tier-h">Collocations</div>
         <div class="tablewrap"><table class="vt"><tbody>
-          <tr><td>make an effort to look good</td><td>to actively try to appear attractive or neat</td><td><i>As a doctor, I make an effort to look good because patients notice everything.</i></td></tr>
-          <tr><td>take (a lot of / little) trouble with your clothes</td><td>to spend a lot of / very little care choosing what you wear</td><td><i>Since he became head of department, he has taken a lot more trouble with his clothes.</i></td></tr>
-          <tr><td>present a (professional) image</td><td>to give others a particular impression through appearance</td><td><i>A clean white coat presents a professional image to patients.</i></td></tr>
-          <tr><td>stand out in a crowd</td><td>to be easily noticed among many people</td><td><i>With her bright red hair, she always stands out in a crowd.</i></td></tr>
-          <tr><td>create a good impression</td><td>to make people think well of you</td><td><i>Neat clothes create a good impression before you say a single word.</i></td></tr>
+          <tr><td>make an effort to look good</td><td>to make an effort to look good</td><td><i>As a doctor, I make an effort to look good because patients notice everything.</i></td></tr>
+          <tr><td>take (a lot of / little) trouble with your clothes</td><td>to take a lot of / little trouble with your clothes</td><td><i>Since he became head of department, he has taken a lot more trouble with his clothes.</i></td></tr>
+          <tr><td>present a (professional) image</td><td>to present a … image</td><td><i>A clean white coat presents a professional image to patients.</i></td></tr>
+          <tr><td>stand out in a crowd</td><td>to stand out in a crowd</td><td><i>With her bright red hair, she always stands out in a crowd.</i></td></tr>
+          <tr><td>create a good impression</td><td>to create a good impression</td><td><i>Neat clothes create a good impression before you say a single word.</i></td></tr>
         </tbody></table></div>
       </div>
     </div>
@@ -847,48 +848,48 @@
         <div class="note warn"><span class="tag">Corpus spot</span><ul><li>The verb in a phrasal verb is still irregular in the past tense: <i>took off</i> (not <s>taked off</s>), <i>went out</i>, <i>stood out</i>, <i>put together</i>.</li></ul></div>
         <div class="sub-h">Phrasal verbs about clothes</div>
         <div class="vadjgrid">
-          <div class="vadjcard"><div class="vw">dress up</div><div class="vm">to dress more smartly than usual</div><div class="vex">I always dress up when I go to a wedding.</div></div>
-          <div class="vadjcard"><div class="vw">slip on</div><div class="vm">to put something on quickly and easily</div><div class="vex">I slipped on some trainers and ran to the car.</div></div>
-          <div class="vadjcard"><div class="vw">pull on</div><div class="vm">to put clothing on with a pulling movement</div><div class="vex">She pulled on a jumper because the ward was cold.</div></div>
-          <div class="vadjcard"><div class="vw">put on · take off</div><div class="vm">to place clothing on the body · to remove it</div><div class="vex">Put your coat on before you go out; take it off when you come back.</div></div>
-          <div class="vadjcard"><div class="vw">try on</div><div class="vm">to put clothing on to see if it fits, before buying</div><div class="vex">Try the jacket on before you buy it.</div></div>
-          <div class="vadjcard"><div class="vw">put together (an outfit)</div><div class="vm">to combine items into a complete outfit</div><div class="vex">She puts together outfits from second-hand clothes.</div></div>
-          <div class="vadjcard"><div class="vw">stand out</div><div class="vm">to be noticeable, different from everyone else</div><div class="vex">In that red dress she really stood out.</div></div>
-          <div class="vadjcard"><div class="vw">fit in with</div><div class="vm">to belong comfortably within a group</div><div class="vex">I wear a suit to fit in with the other consultants.</div></div>
-          <div class="vadjcard"><div class="vw">keep up with</div><div class="vm">to stay at the same pace or level as something changing</div><div class="vex">I can't keep up with my daughter's fashions.</div></div>
-          <div class="vadjcard"><div class="vw">take back</div><div class="vm">to return something you bought to the shop</div><div class="vex">I took the shoes back because they didn't fit.</div></div>
-          <div class="vadjcard"><div class="vw">add to</div><div class="vm">to include something extra</div><div class="vex">A silver necklace added to the elegant look.</div></div>
-          <div class="vadjcard"><div class="vw">get away with</div><div class="vm">to do something and avoid criticism or punishment for it</div><div class="vex">In the lab I can get away with jeans and a T-shirt.</div></div>
+          <div class="vadjcard"><div class="vw">dress up</div><div class="vm">to dress up</div><div class="vex">I always dress up when I go to a wedding.</div></div>
+          <div class="vadjcard"><div class="vw">slip on</div><div class="vm">to slip on</div><div class="vex">I slipped on some trainers and ran to the car.</div></div>
+          <div class="vadjcard"><div class="vw">pull on</div><div class="vm">to pull on</div><div class="vex">She pulled on a jumper because the ward was cold.</div></div>
+          <div class="vadjcard"><div class="vw">put on · take off</div><div class="vm">to put on · to take off</div><div class="vex">Put your coat on before you go out; take it off when you come back.</div></div>
+          <div class="vadjcard"><div class="vw">try on</div><div class="vm">to try on</div><div class="vex">Try the jacket on before you buy it.</div></div>
+          <div class="vadjcard"><div class="vw">put together (an outfit)</div><div class="vm">to put together (an outfit)</div><div class="vex">She puts together outfits from second-hand clothes.</div></div>
+          <div class="vadjcard"><div class="vw">stand out</div><div class="vm">to stand out</div><div class="vex">In that red dress she really stood out.</div></div>
+          <div class="vadjcard"><div class="vw">fit in with</div><div class="vm">to fit in with</div><div class="vex">I wear a suit to fit in with the other consultants.</div></div>
+          <div class="vadjcard"><div class="vw">keep up with</div><div class="vm">to keep up with</div><div class="vex">I can't keep up with my daughter's fashions.</div></div>
+          <div class="vadjcard"><div class="vw">take back</div><div class="vm">to take back</div><div class="vex">I took the shoes back because they didn't fit.</div></div>
+          <div class="vadjcard"><div class="vw">add to</div><div class="vm">to add to</div><div class="vex">A silver necklace added to the elegant look.</div></div>
+          <div class="vadjcard"><div class="vw">get away with</div><div class="vm">to get away with</div><div class="vex">In the lab I can get away with jeans and a T-shirt.</div></div>
         </div>
         <div class="sub-h">Phrasal verbs about money &amp; going out</div>
         <div class="vadjgrid">
-          <div class="vadjcard"><div class="vw">save up (for)</div><div class="vm">to save money gradually for something</div><div class="vex">I'm saving up for a good winter coat.</div></div>
-          <div class="vadjcard"><div class="vw">cut down (on)</div><div class="vm">to reduce the amount of something</div><div class="vex">I should cut down on the amount I spend on clothes.</div></div>
-          <div class="vadjcard"><div class="vw">go out · go clubbing</div><div class="vm">to go out socially · to go to a bar or nightclub</div><div class="vex">We went out clubbing after the exam.</div></div>
+          <div class="vadjcard"><div class="vw">save up (for)</div><div class="vm">to save up (for)</div><div class="vex">I'm saving up for a good winter coat.</div></div>
+          <div class="vadjcard"><div class="vw">cut down (on)</div><div class="vm">to cut down (on)</div><div class="vex">I should cut down on the amount I spend on clothes.</div></div>
+          <div class="vadjcard"><div class="vw">go out · go clubbing</div><div class="vm">to go out · to go clubbing</div><div class="vex">We went out clubbing after the exam.</div></div>
         </div>
         <div class="sub-h">Phrasal verbs with <i>go</i> (SB p. 11 Ex 8)</div>
         <div class="vadjgrid">
-          <div class="vadjcard"><div class="vw">go up</div><div class="vm">to rise or increase</div><div class="vex">The prices of leather bags have gone up a lot recently.</div></div>
-          <div class="vadjcard"><div class="vw">go on</div><div class="vm">to happen or take place</div><div class="vex">What's going on in the changing room?</div></div>
-          <div class="vadjcard"><div class="vw">go for</div><div class="vm">to choose or decide on something</div><div class="vex">If I see something I like, I go for it there and then.</div></div>
-          <div class="vadjcard"><div class="vw">go back</div><div class="vm">to return to something</div><div class="vex">I went back to the shop but they had no more pairs in my size.</div></div>
-          <div class="vadjcard"><div class="vw">go over</div><div class="vm">to check something carefully</div><div class="vex">Go over the dress-code rules before the inspection.</div></div>
-          <div class="vadjcard"><div class="vw">go ahead</div><div class="vm">used to give permission to do something</div><div class="vex">Can I borrow your tie? — Sure, go ahead!</div></div>
+          <div class="vadjcard"><div class="vw">go up</div><div class="vm">to go up</div><div class="vex">The prices of leather bags have gone up a lot recently.</div></div>
+          <div class="vadjcard"><div class="vw">go on</div><div class="vm">to go on</div><div class="vex">What's going on in the changing room?</div></div>
+          <div class="vadjcard"><div class="vw">go for</div><div class="vm">to go for</div><div class="vex">If I see something I like, I go for it there and then.</div></div>
+          <div class="vadjcard"><div class="vw">go back</div><div class="vm">to go back</div><div class="vex">I went back to the shop but they had no more pairs in my size.</div></div>
+          <div class="vadjcard"><div class="vw">go over</div><div class="vm">to go over</div><div class="vex">Go over the dress-code rules before the inspection.</div></div>
+          <div class="vadjcard"><div class="vw">go ahead</div><div class="vm">to go ahead</div><div class="vex">Can I borrow your tie? — Sure, go ahead!</div></div>
         </div>
       </div>
       <div class="tier adv"><div class="tier-h">Advanced</div>
         <div class="tablewrap"><table class="vt"><tbody>
-          <tr><td>wear out</td><td>to become damaged or thin from repeated use</td><td><i>I wore out two pairs of trainers during my first year on the wards.</i></td></tr>
-          <tr><td>splash out (on)</td><td>to spend a lot of money on something as a treat</td><td><i>Once a year I splash out on a really good pair of shoes.</i></td></tr>
+          <tr><td>wear out</td><td>worn out (from use)</td><td><i>I wore out two pairs of trainers during my first year on the wards.</i></td></tr>
+          <tr><td>splash out (on)</td><td>to splash out on</td><td><i>Once a year I splash out on a really good pair of shoes.</i></td></tr>
         </tbody></table></div>
       </div>
       <div class="tier col"><div class="tier-h">Collocations</div>
         <div class="tablewrap"><table class="vt"><tbody>
-          <tr><td>go shopping for clothes</td><td>to go out to buy clothing</td><td><i>I go shopping for clothes about twice a year, usually before Tet.</i></td></tr>
-          <tr><td>buy (clothes) online</td><td>to purchase something over the internet</td><td><i>I buy most of my clothes online because hospital shifts leave no time for shops.</i></td></tr>
-          <tr><td>keep up with the latest fashions</td><td>to stay up to date with new fashion trends</td><td><i>Medical students rarely have the money to keep up with the latest fashions.</i></td></tr>
-          <tr><td>a real bargain<span class="ipa">/ˈbɑːɡɪn/</span></td><td>something bought for much less than its usual value</td><td><i>This coat was a real bargain — half price in the January sales.</i></td></tr>
-          <tr><td>spend a fortune on clothes</td><td>to spend a very large amount of money on clothing</td><td><i>My cousin spends a fortune on clothes she wears only once.</i></td></tr>
+          <tr><td>go shopping for clothes</td><td>to go shopping for clothes</td><td><i>I go shopping for clothes about twice a year, usually before Tet.</i></td></tr>
+          <tr><td>buy (clothes) online</td><td>to buy online</td><td><i>I buy most of my clothes online because hospital shifts leave no time for shops.</i></td></tr>
+          <tr><td>keep up with the latest fashions</td><td>to keep up with the latest fashions</td><td><i>Medical students rarely have the money to keep up with the latest fashions.</i></td></tr>
+          <tr><td>a real bargain<span class="ipa">/ˈbɑːɡɪn/</span></td><td>a real bargain</td><td><i>This coat was a real bargain — half price in the January sales.</i></td></tr>
+          <tr><td>spend a fortune on clothes</td><td>to spend a fortune on clothes</td><td><i>My cousin spends a fortune on clothes she wears only once.</i></td></tr>
         </tbody></table></div>
       </div>
     </div>
@@ -900,35 +901,35 @@
       <div class="tier core"><div class="tier-h">Core · SB Unit 1 · pp. 10, 199–200</div>
         <div class="sub-h">Likes</div>
         <div class="vadjgrid">
-          <div class="vadjcard"><div class="vw">I prefer to wear …</div><div class="vm">used to say which clothes you prefer</div><div class="vex">I prefer to wear casual clothes like jeans and T-shirts.</div></div>
-          <div class="vadjcard"><div class="vw">What I absolutely love is …</div><div class="vm">used to emphasise your favourite thing</div><div class="vex">What I absolutely love is a well-made pair of shoes.</div></div>
-          <div class="vadjcard"><div class="vw">clothes are important to me · my image is really important to me</div><div class="vm">used to say appearance matters a great deal to you</div><div class="vex">My image is really important to me because I deal with people all day.</div></div>
-          <div class="vadjcard"><div class="vw">I favour the casual look</div><div class="vm">used to say you choose an uncomplicated look</div><div class="vex">If anything, I favour the casual look.</div></div>
-          <div class="vadjcard"><div class="vw">comfortable as well as stylish</div><div class="vm">used to describe clothing that is both practical and attractive</div><div class="vex">Clothes need to be comfortable as well as stylish.</div></div>
+          <div class="vadjcard"><div class="vw">I prefer to wear …</div><div class="vm">I prefer to wear …</div><div class="vex">I prefer to wear casual clothes like jeans and T-shirts.</div></div>
+          <div class="vadjcard"><div class="vw">What I absolutely love is …</div><div class="vm">what I really love is …</div><div class="vex">What I absolutely love is a well-made pair of shoes.</div></div>
+          <div class="vadjcard"><div class="vw">clothes are important to me · my image is really important to me</div><div class="vm">clothes / image matter a lot to me</div><div class="vex">My image is really important to me because I deal with people all day.</div></div>
+          <div class="vadjcard"><div class="vw">I favour the casual look</div><div class="vm">I go for a simple style</div><div class="vex">If anything, I favour the casual look.</div></div>
+          <div class="vadjcard"><div class="vw">comfortable as well as stylish</div><div class="vm">comfortable and stylish at the same time</div><div class="vex">Clothes need to be comfortable as well as stylish.</div></div>
         </div>
         <div class="sub-h">Dislikes / indifference</div>
         <div class="vadjgrid">
-          <div class="vadjcard"><div class="vw">I wouldn't be seen dead in …</div><div class="vm">used to say you would never wear something</div><div class="vex">I wouldn't be seen dead in a tie at the weekend.</div></div>
-          <div class="vadjcard"><div class="vw">… isn't really my scene</div><div class="vm">used to say something doesn't suit your taste</div><div class="vex">Shopping for clothes isn't really my scene.</div></div>
-          <div class="vadjcard"><div class="vw">I don't really mind what I wear</div><div class="vm">used to say clothing choice isn't important to you</div><div class="vex">To tell you the truth, I don't really mind what I wear.</div></div>
-          <div class="vadjcard"><div class="vw">I'm not a suit man</div><div class="vm">used to say formal clothing isn't your style</div><div class="vex">I'm not a suit man — even for work I can get away with casual stuff.</div></div>
-          <div class="vadjcard"><div class="vw">(the least) fashion-conscious person I know</div><div class="vm">used to describe someone who pays no attention to fashion</div><div class="vex">My brother is the least fashion-conscious person I know.</div></div>
+          <div class="vadjcard"><div class="vw">I wouldn't be seen dead in …</div><div class="vm">I wouldn't be seen dead in …</div><div class="vex">I wouldn't be seen dead in a tie at the weekend.</div></div>
+          <div class="vadjcard"><div class="vw">… isn't really my scene</div><div class="vm">… isn't my scene</div><div class="vex">Shopping for clothes isn't really my scene.</div></div>
+          <div class="vadjcard"><div class="vw">I don't really mind what I wear</div><div class="vm">I don't really care what I wear</div><div class="vex">To tell you the truth, I don't really mind what I wear.</div></div>
+          <div class="vadjcard"><div class="vw">I'm not a suit man</div><div class="vm">I'm not really a suit person</div><div class="vex">I'm not a suit man — even for work I can get away with casual stuff.</div></div>
+          <div class="vadjcard"><div class="vw">(the least) fashion-conscious person I know</div><div class="vm">the least fashion-conscious person I know</div><div class="vex">My brother is the least fashion-conscious person I know.</div></div>
         </div>
       </div>
       <div class="tier adv"><div class="tier-h">Advanced</div>
         <div class="tablewrap"><table class="vt"><tbody>
-          <tr><td>be into fashion</td><td>to be very interested in fashion</td><td><i>I'm not really into fashion, but I like clothes that fit well.</i></td></tr>
-          <tr><td>follow the latest trends</td><td>to always wear the newest popular styles</td><td><i>Teenage patients often follow the latest trends they see on TikTok.</i></td></tr>
-          <tr><td>put comfort first</td><td>to choose comfort over how something looks</td><td><i>On a 24-hour shift I put comfort first and wear trainers.</i></td></tr>
-          <tr><td>express your personality</td><td>to show who you are through your choices</td><td><i>For many young people, clothes are a way to express their personality.</i></td></tr>
-          <tr><td>it's a matter of personal taste</td><td>something people simply have different opinions about</td><td><i>Whether a white coat looks good is a matter of personal taste.</i></td></tr>
+          <tr><td>be into fashion</td><td>fashion-conscious</td><td><i>I'm not really into fashion, but I like clothes that fit well.</i></td></tr>
+          <tr><td>follow the latest trends</td><td>to follow the latest trends</td><td><i>Teenage patients often follow the latest trends they see on TikTok.</i></td></tr>
+          <tr><td>put comfort first</td><td>to put comfort first</td><td><i>On a 24-hour shift I put comfort first and wear trainers.</i></td></tr>
+          <tr><td>express your personality</td><td>to express your personality</td><td><i>For many young people, clothes are a way to express their personality.</i></td></tr>
+          <tr><td>it's a matter of personal taste</td><td>a matter of personal taste</td><td><i>Whether a white coat looks good is a matter of personal taste.</i></td></tr>
         </tbody></table></div>
       </div>
       <div class="tier col"><div class="tier-h">Collocations</div>
         <div class="tablewrap"><table class="vt"><tbody>
-          <tr><td>dress for the occasion</td><td>to wear clothes suitable for a particular event</td><td><i>At a medical conference you should dress for the occasion: smart, not showy.</i></td></tr>
-          <tr><td>judge people by their appearance</td><td>to form an opinion of someone based only on how they look</td><td><i>Patients shouldn't judge doctors by their appearance, but many of them do.</i></td></tr>
-          <tr><td>care about your appearance</td><td>to pay attention to how you look</td><td><i>Caring about your appearance is not the same as being vain.</i></td></tr>
+          <tr><td>dress for the occasion</td><td>to dress appropriately for the occasion</td><td><i>At a medical conference you should dress for the occasion: smart, not showy.</i></td></tr>
+          <tr><td>judge people by their appearance</td><td>to judge others by their appearance</td><td><i>Patients shouldn't judge doctors by their appearance, but many of them do.</i></td></tr>
+          <tr><td>care about your appearance</td><td>to care about your appearance</td><td><i>Caring about your appearance is not the same as being vain.</i></td></tr>
         </tbody></table></div>
       </div>
     </div>
@@ -951,19 +952,19 @@
       </div>
       <div class="tier adv"><div class="tier-h">Comparison patterns</div>
         <div class="tablewrap"><table class="vt"><tbody>
-          <tr><td>one of the most … + plural</td><td>used to say something is among the top examples of a quality</td><td><i>Vietnam is one of the most fashion-conscious countries in the region.</i></td></tr>
-          <tr><td>by far the most …</td><td>used to emphasise something is clearly the most, by a big margin</td><td><i>Trainers are by far the most practical footwear for a ward round.</i></td></tr>
-          <tr><td>twice as … as / half as … as</td><td>used to compare exact multiples between two things</td><td><i>A designer bag can cost twice as much as a good-quality copy.</i></td></tr>
-          <tr><td>nowhere near as … as</td><td>used to say one thing is far less than another</td><td><i>A knock-off is nowhere near as well-made as the genuine product.</i></td></tr>
-          <tr><td>the more …, the more / the less …</td><td>used to show how one change causes another</td><td><i>The more I earn, the less I seem to care about labels.</i></td></tr>
+          <tr><td>one of the most … + plural</td><td>one of the … -est</td><td><i>Vietnam is one of the most fashion-conscious countries in the region.</i></td></tr>
+          <tr><td>by far the most …</td><td>by far the …-est</td><td><i>Trainers are by far the most practical footwear for a ward round.</i></td></tr>
+          <tr><td>twice as … as / half as … as</td><td>twice as … as / half as … as</td><td><i>A designer bag can cost twice as much as a good-quality copy.</i></td></tr>
+          <tr><td>nowhere near as … as</td><td>nowhere near as … as</td><td><i>A knock-off is nowhere near as well-made as the genuine product.</i></td></tr>
+          <tr><td>the more …, the more / the less …</td><td>the more … the more …</td><td><i>The more I earn, the less I seem to care about labels.</i></td></tr>
         </tbody></table></div>
       </div>
       <div class="tier col"><div class="tier-h">Collocations</div>
         <div class="tablewrap"><table class="vt"><tbody>
-          <tr><td>weigh up the options</td><td>to think carefully about different choices before deciding</td><td><i>Before buying a suit, I weigh up the options: price, fit and how often I'll wear it.</i></td></tr>
-          <tr><td>the best option would be to …</td><td>used to recommend the wisest choice</td><td><i>For a hospital dress code, the best option would be to ban rings and bracelets.</i></td></tr>
-          <tr><td>it depends on …</td><td>used to say the answer changes depending on a factor</td><td><i>Whether I dress up depends on who I'm meeting that day.</i></td></tr>
-          <tr><td>(good) value for money</td><td>worth what you paid for it</td><td><i>A plain cotton shirt from the market is often better value for money than a designer one.</i></td></tr>
+          <tr><td>weigh up the options</td><td>to weigh up the options</td><td><i>Before buying a suit, I weigh up the options: price, fit and how often I'll wear it.</i></td></tr>
+          <tr><td>the best option would be to …</td><td>the best option is</td><td><i>For a hospital dress code, the best option would be to ban rings and bracelets.</i></td></tr>
+          <tr><td>it depends on …</td><td>it depends on …</td><td><i>Whether I dress up depends on who I'm meeting that day.</i></td></tr>
+          <tr><td>(good) value for money</td><td>worth the money</td><td><i>A plain cotton shirt from the market is often better value for money than a designer one.</i></td></tr>
         </tbody></table></div>
       </div>
     </div>
@@ -974,47 +975,47 @@
     <div class="tiers">
       <div class="tier core"><div class="tier-h">Core · SB Unit 1 · pp. 12–13</div>
         <div class="sub-h">The world of fashion</div>
-        <div class="vgrid">
-          <div class="vcard"><div class="vmedia"><img src="img/v-catwalk.jpg" alt="the catwalk" loading="lazy"><div class="voverlay"><div class="vw">the catwalk</div><div class="vm">the long platform models walk along at a fashion show</div><div class="vipa">/ˈkætwɔːk/</div></div></div><div class="vex">Underweight models have dominated the world's catwalks for years.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-supermodel.jpg" alt="supermodel" loading="lazy"><div class="voverlay"><div class="vw">supermodel</div><div class="vm">an extremely famous, highly paid fashion model</div><div class="vipa">/ˈsuːpəmɒdl/</div></div></div><div class="vex">We may not actually want to look like supermodels.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-designerlabel.jpg" alt="designer label" loading="lazy"><div class="voverlay"><div class="vw">designer label</div><div class="vm">an expensive, well-known clothing brand</div><div class="vipa">/dɪˌzaɪnə ˈleɪbl/</div></div></div><div class="vex">Knock-offs are free advertising for the real designer labels, some say.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-luxury.jpg" alt="luxury items" loading="lazy"><div class="voverlay"><div class="vw">luxury items</div><div class="vm">very expensive, high-quality products</div><div class="vipa">/ˈlʌkʃəri/</div></div></div><div class="vex">Designer bags are no longer the luxury items they once were.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/v-marketstall.jpg" alt="market stalls" loading="lazy"><div class="voverlay"><div class="vw">market stalls</div><div class="vm">a small, open stand selling goods in a market</div><div class="vipa">/ˈmɑːkɪt stɔːlz/</div></div></div><div class="vex">Fake goods are sold on market stalls worldwide.</div></div>
-          <div class="vcard"><div class="vmedia"><img src="img/leadin-6.jpg" alt="counterfeit goods" loading="lazy"><div class="voverlay"><div class="vw">counterfeit goods</div><div class="vm">fake products made to look like a real, branded item</div><div class="vipa">/ˈkaʊntəfɪt ɡʊdz/</div></div></div><div class="vex">Counterfeit goods are a big problem for the fashion industry.</div></div>
+        <div class="vgrid" style="--vcols:6">
+          <div class="vcard"><div class="vmedia"><img src="img/v-catwalk.jpg" alt="the catwalk" loading="lazy"><div class="voverlay"><div class="vw">the catwalk</div><div class="vm">the catwalk</div><div class="vipa">/ˈkætwɔːk/</div></div></div><div class="vex">Underweight models have dominated the world's catwalks for years.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-supermodel.jpg" alt="supermodel" loading="lazy"><div class="voverlay"><div class="vw">supermodel</div><div class="vm">a supermodel</div><div class="vipa">/ˈsuːpəmɒdl/</div></div></div><div class="vex">We may not actually want to look like supermodels.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-designerlabel.jpg" alt="designer label" loading="lazy"><div class="voverlay"><div class="vw">designer label</div><div class="vm">a designer label</div><div class="vipa">/dɪˌzaɪnə ˈleɪbl/</div></div></div><div class="vex">Knock-offs are free advertising for the real designer labels, some say.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-luxury.jpg" alt="luxury items" loading="lazy"><div class="voverlay"><div class="vw">luxury items</div><div class="vm">luxury goods</div><div class="vipa">/ˈlʌkʃəri/</div></div></div><div class="vex">Designer bags are no longer the luxury items they once were.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/v-marketstall.jpg" alt="market stalls" loading="lazy"><div class="voverlay"><div class="vw">market stalls</div><div class="vm">a market stall</div><div class="vipa">/ˈmɑːkɪt stɔːlz/</div></div></div><div class="vex">Fake goods are sold on market stalls worldwide.</div></div>
+          <div class="vcard"><div class="vmedia"><img src="img/leadin-6.jpg" alt="counterfeit goods" loading="lazy"><div class="voverlay"><div class="vw">counterfeit goods</div><div class="vm">counterfeit goods</div><div class="vipa">/ˈkaʊntəfɪt ɡʊdz/</div></div></div><div class="vex">Counterfeit goods are a big problem for the fashion industry.</div></div>
         </div>
         <div class="sub-h">Other words &amp; phrases from the two reading texts</div>
         <div class="vadjgrid">
-          <div class="vadjcard"><div class="vw">the fashion industry · fashion houses · brands</div><div class="vm">the business of fashion · top design companies · product makers/brands</div><div class="vex">Fashion houses design their clothes for the youngest and skinniest models.</div></div>
-          <div class="vadjcard"><div class="vw">underweight models · the least achievable figure</div><div class="vm">models who weigh too little · a body shape most people can't realistically get</div><div class="vipa">/ˌʌndəˈweɪt/</div><div class="vex">Fashion carries the image of the least achievable figure.</div></div>
-          <div class="vadjcard"><div class="vw">knock-offs · imitation goods · fake designer goods · cheap copies</div><div class="vm">unofficial copies · fake products · imitation branded items · low-cost copies of the original</div><div class="vipa">/ˈnɒk ɒfs/ · /ˌɪmɪˈteɪʃn/</div><div class="vex">Knock-offs are now far more readily available than they were.</div></div>
-          <div class="vadjcard"><div class="vw">the genuine product · the real thing</div><div class="vm">the authentic, original item, not a copy</div><div class="vipa">/ˈdʒenjuɪn/</div><div class="vex">Often a knock-off looks as good as the real thing.</div></div>
-          <div class="vadjcard"><div class="vw">an illegal activity</div><div class="vm">something against the law</div><div class="vipa">/ɪˈliːɡl/</div><div class="vex">There is no getting away from the fact that this is an illegal activity.</div></div>
-          <div class="vadjcard"><div class="vw">damage the brands · reduce sales · free advertising</div><div class="vm">to hurt a brand's reputation · to lower how much is sold · promotion that costs nothing</div><div class="vex">Fake goods damage the actual brands in more ways than one.</div></div>
-          <div class="vadjcard"><div class="vw">fight back · high-tech solutions</div><div class="vm">to respond and defend against a problem · advanced technology used to solve it</div><div class="vex">The industry is fighting back with high-tech solutions.</div></div>
-          <div class="vadjcard"><div class="vw">street markets · look like supermodels</div><div class="vm">informal outdoor markets · to look as glamorous as a top fashion model</div><div class="vex">I often find stuff in street markets.</div></div>
+          <div class="vadjcard"><div class="vw">the fashion industry · fashion houses · brands</div><div class="vm">the fashion industry · fashion houses · brands</div><div class="vex">Fashion houses design their clothes for the youngest and skinniest models.</div></div>
+          <div class="vadjcard"><div class="vw">underweight models · the least achievable figure</div><div class="vm">underweight models · an almost unachievable body shape</div><div class="vipa">/ˌʌndəˈweɪt/</div><div class="vex">Fashion carries the image of the least achievable figure.</div></div>
+          <div class="vadjcard"><div class="vw">knock-offs · imitation goods · fake designer goods · cheap copies</div><div class="vm">fakes · counterfeits · fake designer goods · cheap copies</div><div class="vipa">/ˈnɒk ɒfs/ · /ˌɪmɪˈteɪʃn/</div><div class="vex">Knock-offs are now far more readily available than they were.</div></div>
+          <div class="vadjcard"><div class="vw">the genuine product · the real thing</div><div class="vm">the genuine article</div><div class="vipa">/ˈdʒenjuɪn/</div><div class="vex">Often a knock-off looks as good as the real thing.</div></div>
+          <div class="vadjcard"><div class="vw">an illegal activity</div><div class="vm">an illegal activity</div><div class="vipa">/ɪˈliːɡl/</div><div class="vex">There is no getting away from the fact that this is an illegal activity.</div></div>
+          <div class="vadjcard"><div class="vw">damage the brands · reduce sales · free advertising</div><div class="vm">to damage a brand · to cut sales · free advertising</div><div class="vex">Fake goods damage the actual brands in more ways than one.</div></div>
+          <div class="vadjcard"><div class="vw">fight back · high-tech solutions</div><div class="vm">to fight back · a high-tech solution</div><div class="vex">The industry is fighting back with high-tech solutions.</div></div>
+          <div class="vadjcard"><div class="vw">street markets · look like supermodels</div><div class="vm">a street market · to look like a supermodel</div><div class="vex">I often find stuff in street markets.</div></div>
         </div>
       </div>
       <div class="tier adv"><div class="tier-h">Advanced</div>
         <div class="sub-h">Fashion &amp; health</div>
         <div class="tablewrap"><table class="vt"><tbody>
-          <tr><td>body image (U)</td><td>how you see and feel about your own body</td><td><i>Fashion advertising has a powerful effect on teenagers' body image.</i></td></tr>
-          <tr><td>self-esteem (U)<span class="ipa">/ˌself ɪˈstiːm/</span></td><td>confidence in your own worth and abilities</td><td><i>Constant comparison with models can damage a young patient's self-esteem.</i></td></tr>
-          <tr><td>an eating disorder<span class="ipa">/dɪsˈɔːdə/</span></td><td>a serious medical condition involving unhealthy eating habits</td><td><i>We see more eating disorders in girls who want to look like catwalk models.</i></td></tr>
+          <tr><td>body image (U)</td><td>body image</td><td><i>Fashion advertising has a powerful effect on teenagers' body image.</i></td></tr>
+          <tr><td>self-esteem (U)<span class="ipa">/ˌself ɪˈstiːm/</span></td><td>self-esteem</td><td><i>Constant comparison with models can damage a young patient's self-esteem.</i></td></tr>
+          <tr><td>an eating disorder<span class="ipa">/dɪsˈɔːdə/</span></td><td>an eating disorder</td><td><i>We see more eating disorders in girls who want to look like catwalk models.</i></td></tr>
         </tbody></table></div>
         <div class="sub-h">Fashion &amp; society</div>
         <div class="tablewrap"><table class="vt"><tbody>
-          <tr><td>set unrealistic standards<span class="ipa">/ˌʌnrɪəˈlɪstɪk/</span></td><td>to create expectations that are impossible for most people to meet</td><td><i>Fashion houses set unrealistic standards that almost nobody can reach.</i></td></tr>
-          <tr><td>fast fashion (U)</td><td>cheap clothing produced quickly to match the latest trends</td><td><i>Fast fashion is cheap for the buyer but expensive for the environment.</i></td></tr>
-          <tr><td>peer pressure (U)<span class="ipa">/ˈpɪə ˌpreʃə/</span></td><td>the influence from people your own age to behave a certain way</td><td><i>Peer pressure pushes students to buy labels they can't afford.</i></td></tr>
+          <tr><td>set unrealistic standards<span class="ipa">/ˌʌnrɪəˈlɪstɪk/</span></td><td>to set unrealistic standards</td><td><i>Fashion houses set unrealistic standards that almost nobody can reach.</i></td></tr>
+          <tr><td>fast fashion (U)</td><td>fast fashion</td><td><i>Fast fashion is cheap for the buyer but expensive for the environment.</i></td></tr>
+          <tr><td>peer pressure (U)<span class="ipa">/ˈpɪə ˌpreʃə/</span></td><td>peer pressure</td><td><i>Peer pressure pushes students to buy labels they can't afford.</i></td></tr>
         </tbody></table></div>
       </div>
       <div class="tier col"><div class="tier-h">Collocations</div>
         <div class="tablewrap"><table class="vt"><tbody>
-          <tr><td>have a negative impact on</td><td>to affect something in a harmful way</td><td><i>Counterfeit goods have a negative impact on jobs in the fashion industry.</i></td></tr>
-          <tr><td>there's no getting away from the fact that</td><td>used to say something is undeniably true</td><td><i>There's no getting away from the fact that most of us have bought a fake at some point.</i></td></tr>
-          <tr><td>raise awareness of</td><td>to help more people understand or notice an issue</td><td><i>Doctors can raise awareness of the health risks of extreme dieting.</i></td></tr>
-          <tr><td>ban somebody from + -ing</td><td>to officially not allow someone to do something</td><td><i>Some countries have banned agencies from using underweight models.</i></td></tr>
-          <tr><td>put pressure on somebody to …</td><td>to strongly push someone to do something</td><td><i>Advertising puts pressure on young women to be as thin as possible.</i></td></tr>
+          <tr><td>have a negative impact on</td><td>to have a negative impact on</td><td><i>Counterfeit goods have a negative impact on jobs in the fashion industry.</i></td></tr>
+          <tr><td>there's no getting away from the fact that</td><td>there's no getting away from the fact that</td><td><i>There's no getting away from the fact that most of us have bought a fake at some point.</i></td></tr>
+          <tr><td>raise awareness of</td><td>to raise awareness of</td><td><i>Doctors can raise awareness of the health risks of extreme dieting.</i></td></tr>
+          <tr><td>ban somebody from + -ing</td><td>to ban somebody from + -ing</td><td><i>Some countries have banned agencies from using underweight models.</i></td></tr>
+          <tr><td>put pressure on somebody to …</td><td>to put pressure on somebody to …</td><td><i>Advertising puts pressure on young women to be as thin as possible.</i></td></tr>
         </tbody></table></div>
       </div>
     </div>
