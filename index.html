@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
 <title>Fashion Matters B2</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500&family=Roboto+Condensed:wght@500;700&family=Roboto+Mono:wght@500;700&family=Noto+Sans:wght@400;500&display=swap">
@@ -227,6 +228,7 @@
   .ex-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; padding: 12px 18px; background: var(--surface-2); border-bottom: 1px solid var(--line); }
   .ex-no { font-family: var(--font-mono); font-weight: 700; color: #3A1E00; background: linear-gradient(135deg, var(--orange), var(--gold)); padding: 3px 10px; border-radius: 7px; font-size: .84em; }
   .ex-head h4 { flex: 1 1 200px; font-size: 1.08em; }
+  @media (max-width: 560px) { .ex-head h4 { flex-basis: 100%; } }
   .ex-type { font-family: var(--font-cond); font-weight: 700; letter-spacing: .05em; text-transform: uppercase; font-size: .74em; color: var(--muted); }
   .score { font-family: var(--font-mono); font-weight: 700; min-width: 3.2em; text-align: right; color: var(--purple-ink); }
   .score.full { color: var(--good); }
@@ -486,6 +488,42 @@
   .plan { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; }
   .plan textarea.free { min-height: 90px; }
   .plan label { display: block; font-family: var(--font-cond); font-weight: 700; letter-spacing: .04em; font-size: .86em; color: var(--ink-2); margin-bottom: 4px; }
+
+  /* speaking Q&A: question always visible, model answer hidden behind a details/summary reveal (same mechanism as .li-hint) */
+  .qa .qa-reveal { margin-top: 8px; }
+  .qa .qa-reveal summary { cursor: pointer; color: var(--orange-ink); font-weight: 700; font-family: var(--font-cond); font-size: .86em; letter-spacing: .02em; }
+  .qa .qa-reveal[open] summary { margin-bottom: 4px; }
+  .qa .qa-reveal .a { margin-top: 4px; }
+
+  /* self-recording widget (student's own voice — MediaRecorder, client-side only, nothing uploaded) */
+  .rec-widget { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 10px 0 4px; padding: 8px 12px; background: var(--surface-2); border: 1px dashed var(--line-strong); border-radius: 10px; }
+  .rec-widget .rec-label { font-family: var(--font-cond); font-size: .78em; font-weight: 700; letter-spacing: .04em; color: var(--ink-2); text-transform: uppercase; margin-right: 2px; }
+  .rec-widget button[disabled] { opacity: .5; cursor: not-allowed; }
+  .rec-widget .rec-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--bad); display: none; }
+  .rec-widget.recording .rec-dot { display: inline-block; animation: recpulse 1s infinite; }
+  @keyframes recpulse { 0%, 100% { opacity: 1; } 50% { opacity: .2; } }
+  .rec-widget audio.rec-audio { height: 32px; max-width: 230px; }
+  .rec-widget .rec-msg { font-size: .82em; color: var(--muted); }
+  .rec-widget .rec-msg.err { color: var(--bad); }
+  .part-sticky .rec-widget { margin-top: 8px; }
+
+  /* Exercise 2: phrasal-verb meaning box, locked until the exercise's answers are fully revealed/checked */
+  .ev-def-box.locked { color: var(--muted); font-style: italic; border-left-color: var(--line-strong); }
+  .ev-def-box.locked .ev-def-term { color: var(--muted); }
+  .ex-lockinfo { padding: 0 18px; margin: -4px 0 8px; font-size: .85em; color: var(--muted); }
+
+  /* writing self-check: rule-based heuristic checklist, not an AI grader */
+  .wcheck { margin-top: 14px; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .wcheck-head { padding: 10px 16px; background: var(--surface-2); font-family: var(--font-cond); font-weight: 700; letter-spacing: .03em; color: var(--purple-ink); }
+  .wcheck-note { padding: 0 16px 8px; font-size: .84em; color: var(--muted); background: var(--surface-2); }
+  .wcheck ul { list-style: none; margin: 0; padding: 10px 12px 14px; display: grid; gap: 6px; }
+  .wcheck li { display: flex; gap: 9px; align-items: flex-start; font-size: .92em; padding: 7px 10px; border-radius: 8px; line-height: 1.4; }
+  .wcheck li.pass { background: var(--good-soft); }
+  .wcheck li.warn { background: var(--orange-soft); }
+  .wcheck li .ic { flex: none; font-weight: 700; }
+  .wcheck li.pass .ic { color: var(--good); }
+  .wcheck li.warn .ic { color: var(--orange-ink); }
+  .btn.submitcheck { background: var(--purple); color: #fff; }
 
   /* vocabulary cards: photo on top (untouched by text); word/meaning/IPA centred below it; example below that in a distinct colour */
   .sub-h { display: inline-block; font-family: var(--font-cond); text-transform: uppercase; letter-spacing: .07em; font-size: .84em; color: var(--orange-ink); font-weight: 800; margin: 16px 14px 8px; padding: 5px 14px; background: var(--orange-soft); border-left: 4px solid var(--orange); border-radius: 0 8px 8px 0; }
@@ -1114,17 +1152,23 @@
 
   <section class="block">
     <div class="part-sticky">
-      <h3 id="s-p1">Part 1 · Social interaction (3') — 2 topics, 6 questions</h3>
+      <h3 id="s-p1">Part 1 · Social interaction (3') — 3 topics, 10 questions</h3>
       <div class="timer"><span class="tdisp">0:30</span><button class="btn sm" type="button" data-sec="30">30"</button><button class="btn sm ghost" type="button" data-sec="180">Whole Part 1 · 3'</button><button class="btn sm stop tstop" type="button">⏹</button><span style="color:var(--muted);font-size:.9em">Answer = <span class="step-tag point">Point</span> + <span class="step-tag why">Why</span> (+ <span class="step-tag example">Example</span>).</span></div>
+      <div class="rec-widget" data-rec="p1"><span class="rec-label">Record practice — Part 1</span><button class="btn sm rec-start" type="button">🎙 Record</button><button class="btn sm ghost rec-stop" type="button" disabled>⏹ Stop</button><span class="rec-dot"></span><audio class="rec-audio" controls hidden></audio><span class="rec-msg"></span></div>
     </div>
     <h4 style="margin:10px 0 4px">Let's talk about fashion.</h4>
-    <div class="qa"><p class="q">1 · How important is fashion to you?</p><p class="a"><span class="step-tag point">Point</span>To be honest, I'm <mark>not really into fashion</mark>. <span class="step-tag why">Why</span>My job means I <mark>put comfort first</mark> — I'm in a white coat most of the day. <span class="step-tag example">Example</span>Outside work, though, I do <mark>make an effort to look good</mark>, especially at conferences and family weddings.</p></div>
-    <div class="qa"><p class="q">2 · What sort of clothes do you prefer to wear?</p><p class="a"><span class="step-tag point">Point</span><mark>I prefer to wear</mark> casual clothes, such as <mark>loose-fitting</mark> cotton trousers and a <mark>plain</mark> shirt. <span class="step-tag why">Why</span>They <mark>suit me</mark>, and they're <mark>comfortable as well as stylish</mark>. <span class="step-tag example">Example</span><mark>What I really love is</mark> a <mark>well-made</mark> shirt that <mark>fits</mark> properly — and I <mark>wear out</mark> a pair of trainers every year because I'm on my feet all day.</p></div>
-    <div class="qa"><p class="q">3 · Do you ever have to wear things you don't really like? If so, when, and why?</p><p class="a"><span class="step-tag point">Point</span>Yes — my army uniform in summer, and a tie at formal dinners. <span class="step-tag why">Why</span>I'm not keen on either, but you have to <mark>dress for the occasion</mark>. <span class="step-tag example">Example</span>Admittedly the uniform is a bit <mark>old-fashioned</mark>, but <mark>it depends on</mark> the event: at a graduation ceremony it looks exactly right.</p></div>
+    <div class="qa"><p class="q">1 · How important is fashion to you?</p><details class="li-hint qa-reveal"><summary>Model answer</summary><p class="a"><span class="step-tag point">Point</span>To be honest, I'm <mark>not really into fashion</mark>. <span class="step-tag why">Why</span>My job means I <mark>put comfort first</mark> — I'm in a white coat most of the day. <span class="step-tag example">Example</span>Outside work, though, I do <mark>make an effort to look good</mark>, especially at conferences and family weddings.</p></details></div>
+    <div class="qa"><p class="q">2 · What sort of clothes do you prefer to wear?</p><details class="li-hint qa-reveal"><summary>Model answer</summary><p class="a"><span class="step-tag point">Point</span><mark>I prefer to wear</mark> casual clothes, such as <mark>loose-fitting</mark> cotton trousers and a <mark>plain</mark> shirt. <span class="step-tag why">Why</span>They <mark>suit me</mark>, and they're <mark>comfortable as well as stylish</mark>. <span class="step-tag example">Example</span><mark>What I really love is</mark> a <mark>well-made</mark> shirt that <mark>fits</mark> properly — and I <mark>wear out</mark> a pair of trainers every year because I'm on my feet all day.</p></details></div>
+    <div class="qa"><p class="q">3 · Do you ever have to wear things you don't really like? If so, when, and why?</p><details class="li-hint qa-reveal"><summary>Model answer</summary><p class="a"><span class="step-tag point">Point</span>Yes — my army uniform in summer, and a tie at formal dinners. <span class="step-tag why">Why</span>I'm not keen on either, but you have to <mark>dress for the occasion</mark>. <span class="step-tag example">Example</span>Admittedly the uniform is a bit <mark>old-fashioned</mark>, but <mark>it depends on</mark> the event: at a graduation ceremony it looks exactly right.</p></details></div>
     <h4 style="margin:18px 0 4px">Let's talk about clothes at work.</h4>
-    <div class="qa"><p class="q">4 · What do you usually wear to work?</p><p class="a"><span class="step-tag point">Point</span>On the wards I'm <mark>dressed in a white coat</mark> over a shirt and dark trousers; in theatre I <mark>change into scrubs</mark>. <span class="step-tag why">Why</span>The coat <mark>presents a professional image</mark>, and patients expect it. <span class="step-tag example">Example</span>I keep a spare <mark>pair of trousers</mark> in my locker in case something gets stained.</p></div>
-    <div class="qa"><p class="q">5 · Do you think doctors should wear a uniform? Why?</p><p class="a"><span class="step-tag point">Point</span><mark>I'd say</mark> yes, at least on the wards. <span class="step-tag why">Why</span><mark>The main reason is that</mark> patients can tell who's who, and <mark>wearing a uniform</mark> <mark>creates a good impression</mark>. <span class="step-tag counter">Counter</span><mark>On the other hand</mark>, a uniform that doesn't <mark>fit</mark> properly looks scruffy, so hospitals need to buy good ones.</p></div>
-    <div class="qa"><p class="q">6 · How do you choose what to wear for an important event?</p><p class="a"><span class="step-tag point">Point</span>I <mark>weigh up the options</mark> the night before. <span class="step-tag why">Why</span><mark>It depends on</mark> who I'm meeting: for a conference <mark>I'd go for</mark> a dark suit, for a family wedding something more colourful. <span class="step-tag example">Example</span>If I'm not sure, I try two outfits on and ask my wife — she has <mark>far better dress sense</mark> than I do.</p></div>
+    <div class="qa"><p class="q">4 · What do you usually wear to work?</p><details class="li-hint qa-reveal"><summary>Model answer</summary><p class="a"><span class="step-tag point">Point</span>On the wards I'm <mark>dressed in a white coat</mark> over a shirt and dark trousers; in theatre I <mark>change into scrubs</mark>. <span class="step-tag why">Why</span>The coat <mark>presents a professional image</mark>, and patients expect it. <span class="step-tag example">Example</span>I keep a spare <mark>pair of trousers</mark> in my locker in case something gets stained.</p></details></div>
+    <div class="qa"><p class="q">5 · Do you think doctors should wear a uniform? Why?</p><details class="li-hint qa-reveal"><summary>Model answer</summary><p class="a"><span class="step-tag point">Point</span><mark>I'd say</mark> yes, at least on the wards. <span class="step-tag why">Why</span><mark>The main reason is that</mark> patients can tell who's who, and <mark>wearing a uniform</mark> <mark>creates a good impression</mark>. <span class="step-tag counter">Counter</span><mark>On the other hand</mark>, a uniform that doesn't <mark>fit</mark> properly looks scruffy, so hospitals need to buy good ones.</p></details></div>
+    <div class="qa"><p class="q">6 · How do you choose what to wear for an important event?</p><details class="li-hint qa-reveal"><summary>Model answer</summary><p class="a"><span class="step-tag point">Point</span>I <mark>weigh up the options</mark> the night before. <span class="step-tag why">Why</span><mark>It depends on</mark> who I'm meeting: for a conference <mark>I'd go for</mark> a dark suit, for a family wedding something more colourful. <span class="step-tag example">Example</span>If I'm not sure, I try two outfits on and ask my wife — she has <mark>far better dress sense</mark> than I do.</p></details></div>
+    <h4 style="margin:18px 0 4px">Let's talk about buying clothes.</h4>
+    <div class="qa"><p class="q">7 · How often do you buy new clothes?</p><details class="li-hint qa-reveal"><summary>Model answer</summary><p class="a"><span class="step-tag point">Point</span>Not very often — maybe <mark>I go shopping for clothes</mark> two or three times a year. <span class="step-tag why">Why</span>Hospital shifts don't leave much free time. <span class="step-tag example">Example</span>When I do, I usually <mark>buy</mark> a few things <mark>online</mark> to save time.</p></details></div>
+    <div class="qa"><p class="q">8 · Do you prefer shopping in shops or online? Why?</p><details class="li-hint qa-reveal"><summary>Model answer</summary><p class="a"><span class="step-tag point">Point</span><mark>I'd say</mark> online, on balance. <span class="step-tag why">Why</span>It's <mark>far more convenient</mark> than going from shop to shop, and I can compare prices easily. <span class="step-tag example">Example</span>The only problem is I can't <mark>try</mark> anything <mark>on</mark> first, so I sometimes have to <mark>take</mark> things <mark>back</mark>.</p></details></div>
+    <div class="qa"><p class="q">9 · Have you ever bought something you never wore? What happened?</p><details class="li-hint qa-reveal"><summary>Model answer</summary><p class="a"><span class="step-tag point">Point</span>Yes — a bright jacket I thought was <mark>a real bargain</mark> in a sale. <span class="step-tag why">Why</span>It looked <mark>outrageous</mark> once I got it home, so I never actually <mark>slipped it on</mark> again. <span class="step-tag example">Example</span>I learned not to <mark>spend a fortune on clothes</mark> I haven't tried on properly.</p></details></div>
+    <div class="qa"><p class="q">10 · Would you rather receive clothes as a gift, or choose them yourself?</p><details class="li-hint qa-reveal"><summary>Model answer</summary><p class="a"><span class="step-tag point">Point</span>Definitely choose them myself. <span class="step-tag why">Why</span>Clothes are <mark>a matter of personal taste</mark>, and a gift doesn't always <mark>fit</mark> or <mark>suit me</mark>. <span class="step-tag example">Example</span>My wife once gave me a <mark>sparkly</mark> shirt as a joke — it's still in the wardrobe, unworn!</p></details></div>
     <div class="ex" id="sp-p1">
       <div class="ex-head"><span class="ex-no">Practise</span><h4>Write your answer to any 3 questions — 2–3 clauses each, at least 1 collocation</h4><span class="ex-type">Free</span><span class="score" data-score></span></div>
       <div class="ex-body">
@@ -1148,6 +1192,7 @@
     <div class="part-sticky">
       <h3 id="s-p2">Part 2 · Topic development (5') — speak from the diagram</h3>
       <div class="timer"><span class="tdisp">3:00</span><button class="btn sm ghost" type="button" data-sec="60">Prepare 1'</button><button class="btn sm" type="button" data-sec="180">Speak 3'</button><button class="btn sm ghost" type="button" data-sec="300">Whole Part 2 · 5'</button><button class="btn sm stop tstop" type="button">⏹</button><span style="color:var(--muted);font-size:.9em">Khung: <span class="step-tag point">Point</span> <span class="step-tag why">Why</span> <span class="step-tag example">Example</span> <span class="step-tag counter">Counter</span> <span class="step-tag evaluation">Evaluation</span></span></div>
+      <div class="rec-widget" data-rec="p2"><span class="rec-label">Record practice — Part 2</span><button class="btn sm rec-start" type="button">🎙 Record</button><button class="btn sm ghost rec-stop" type="button" disabled>⏹ Stop</button><span class="rec-dot"></span><audio class="rec-audio" controls hidden></audio><span class="rec-msg"></span></div>
     </div>
     <p class="prose full" style="margin:10px 0 4px"><b>The student will have a long turn to talk on the following topic:</b></p>
 
@@ -1229,18 +1274,24 @@
 
   <section class="block">
     <div class="part-sticky">
-      <h3 id="s-p3">Part 3 · Extended questions (4') — 3 extended questions, 5 points</h3>
+      <h3 id="s-p3">Part 3 · Extended questions (4') — 10 extended questions, 5 points</h3>
       <div class="timer"><span class="tdisp">1:00</span><button class="btn sm" type="button" data-sec="60">1' per question</button><button class="btn sm ghost" type="button" data-sec="240">Whole Part 3 · 4'</button><button class="btn sm stop tstop" type="button">⏹</button><span style="color:var(--muted);font-size:.9em">Khung: <span class="step-tag point">Point</span> <span class="step-tag why">Why</span> <span class="step-tag counter">Counter</span> <span class="step-tag evaluation">Evaluation</span></span></div>
+      <div class="rec-widget" data-rec="p3"><span class="rec-label">Record practice — Part 3</span><button class="btn sm rec-start" type="button">🎙 Record</button><button class="btn sm ghost rec-stop" type="button" disabled>⏹ Stop</button><span class="rec-dot"></span><audio class="rec-audio" controls hidden></audio><span class="rec-msg"></span></div>
     </div>
     <p class="prose full" style="margin:10px 0 4px"><b>You can use the following suggested questions to ask your student:</b></p>
     <h4 style="margin:10px 0 4px">After Topic A</h4>
-    <div class="qa"><p class="q">1 · Is it fair to judge people by how they dress?</p><p class="a"><span class="step-tag point">Point</span><mark>Personally, I think</mark> it's not entirely fair — clothes are partly <mark>a matter of personal taste</mark> — but it's human nature. <span class="step-tag why">Why</span>We can't help forming an impression in seconds. <span class="step-tag counter">Counter</span><mark>However</mark>, a good doctor learns to look past a patient's <mark>tatty</mark> clothes. <span class="step-tag evaluation">Evaluation</span>So we should be aware of it rather than pretend it doesn't happen.</p></div>
-    <div class="qa"><p class="q">2 · Should hospitals have a strict dress code for doctors?</p><p class="a"><span class="step-tag point">Point</span>A clear one, yes — a strict one, not necessarily. <span class="step-tag why">Why</span><mark>The main reason is</mark> hygiene: no rings, no long sleeves, clean <mark>scrubs</mark> or a clean <mark>white coat</mark>. <span class="step-tag counter">Counter</span><mark>Although</mark> some colleagues find rules annoying, patients feel safer. <span class="step-tag evaluation">Evaluation</span><mark>On balance</mark>, a short list of practical rules is <mark>far better than</mark> a long list of fashion rules.</p></div>
-    <div class="qa"><p class="q">3 · Do people take more trouble with their appearance now than in the past?</p><p class="a"><span class="step-tag point">Point</span>Yes, I think they do — <mark>much more</mark> than my parents' generation. <span class="step-tag why">Why</span>Social media means everyone is photographed all the time, so people <mark>care about their appearance</mark> even on an ordinary day. <span class="step-tag counter">Counter</span><mark>Admittedly</mark>, that can turn into <mark>spending a fortune on clothes</mark> you wear once. <span class="step-tag evaluation">Evaluation</span>But <mark>in comparison</mark> with twenty years ago, people simply look <mark>more presentable</mark>, and that's not a bad thing.</p></div>
+    <div class="qa"><p class="q">1 · Is it fair to judge people by how they dress?</p><details class="li-hint qa-reveal"><summary>Model answer</summary><p class="a"><span class="step-tag point">Point</span><mark>Personally, I think</mark> it's not entirely fair — clothes are partly <mark>a matter of personal taste</mark> — but it's human nature. <span class="step-tag why">Why</span>We can't help forming an impression in seconds. <span class="step-tag counter">Counter</span><mark>However</mark>, a good doctor learns to look past a patient's <mark>tatty</mark> clothes. <span class="step-tag evaluation">Evaluation</span>So we should be aware of it rather than pretend it doesn't happen.</p></details></div>
+    <div class="qa"><p class="q">2 · Should hospitals have a strict dress code for doctors?</p><details class="li-hint qa-reveal"><summary>Model answer</summary><p class="a"><span class="step-tag point">Point</span>A clear one, yes — a strict one, not necessarily. <span class="step-tag why">Why</span><mark>The main reason is</mark> hygiene: no rings, no long sleeves, clean <mark>scrubs</mark> or a clean <mark>white coat</mark>. <span class="step-tag counter">Counter</span><mark>Although</mark> some colleagues find rules annoying, patients feel safer. <span class="step-tag evaluation">Evaluation</span><mark>On balance</mark>, a short list of practical rules is <mark>far better than</mark> a long list of fashion rules.</p></details></div>
+    <div class="qa"><p class="q">3 · Do people take more trouble with their appearance now than in the past?</p><details class="li-hint qa-reveal"><summary>Model answer</summary><p class="a"><span class="step-tag point">Point</span>Yes, I think they do — <mark>much more</mark> than my parents' generation. <span class="step-tag why">Why</span>Social media means everyone is photographed all the time, so people <mark>care about their appearance</mark> even on an ordinary day. <span class="step-tag counter">Counter</span><mark>Admittedly</mark>, that can turn into <mark>spending a fortune on clothes</mark> you wear once. <span class="step-tag evaluation">Evaluation</span>But <mark>in comparison</mark> with twenty years ago, people simply look <mark>more presentable</mark>, and that's not a bad thing.</p></details></div>
     <h4 style="margin:18px 0 4px">After Topic B</h4>
-    <div class="qa"><p class="q">1 · Would you ever buy a knock-off? Why / why not?</p><p class="a"><span class="step-tag point">Point</span>Honestly, I did once, when I was a student. <span class="step-tag why">Why</span>It was <mark>a real bargain</mark>, and it looked exactly like <mark>the genuine product</mark>. <span class="step-tag counter">Counter</span>But it <mark>wore out</mark> within a month, and now I'd rather <mark>save up for</mark> one <mark>well-made</mark> item. <span class="step-tag evaluation">Evaluation</span>So no — not any more.</p></div>
-    <div class="qa"><p class="q">2 · How does fashion advertising affect young people?</p><p class="a"><span class="step-tag point">Point</span><mark>In my view</mark>, it affects them more than they realise. <span class="step-tag why">Why</span>Adverts <mark>set unrealistic standards</mark>: the models are younger and thinner than almost anyone in real life. <span class="step-tag counter">Counter</span><mark>On the other hand</mark>, some brands now use models of different sizes, which is a step in the right direction. <span class="step-tag evaluation">Evaluation</span>So the picture is slowly improving, but <mark>peer pressure</mark> on social media is still <mark>a lot stronger than</mark> any advert.</p></div>
-    <div class="qa"><p class="q">3 · Should governments ban agencies from using underweight models?</p><p class="a"><span class="step-tag point">Point</span><mark>I'd say</mark> yes, and some countries already have. <span class="step-tag why">Why</span>As a doctor, I've seen what a catwalk figure costs: <mark>eating disorders</mark> are <mark>far more common</mark> among girls who copy those models. <span class="step-tag counter">Counter</span><mark>Even though</mark> a ban alone won't change <mark>body image</mark> overnight, it sends a clear message. <span class="step-tag evaluation">Evaluation</span><mark>All things considered</mark>, a minimum healthy weight for models is a small rule with a big effect.</p></div>
+    <div class="qa"><p class="q">4 · Would you ever buy a knock-off? Why / why not?</p><details class="li-hint qa-reveal"><summary>Model answer</summary><p class="a"><span class="step-tag point">Point</span>Honestly, I did once, when I was a student. <span class="step-tag why">Why</span>It was <mark>a real bargain</mark>, and it looked exactly like <mark>the genuine product</mark>. <span class="step-tag counter">Counter</span>But it <mark>wore out</mark> within a month, and now I'd rather <mark>save up for</mark> one <mark>well-made</mark> item. <span class="step-tag evaluation">Evaluation</span>So no — not any more.</p></details></div>
+    <div class="qa"><p class="q">5 · How does fashion advertising affect young people?</p><details class="li-hint qa-reveal"><summary>Model answer</summary><p class="a"><span class="step-tag point">Point</span><mark>In my view</mark>, it affects them more than they realise. <span class="step-tag why">Why</span>Adverts <mark>set unrealistic standards</mark>: the models are younger and thinner than almost anyone in real life. <span class="step-tag counter">Counter</span><mark>On the other hand</mark>, some brands now use models of different sizes, which is a step in the right direction. <span class="step-tag evaluation">Evaluation</span>So the picture is slowly improving, but <mark>peer pressure</mark> on social media is still <mark>a lot stronger than</mark> any advert.</p></details></div>
+    <div class="qa"><p class="q">6 · Should governments ban agencies from using underweight models?</p><details class="li-hint qa-reveal"><summary>Model answer</summary><p class="a"><span class="step-tag point">Point</span><mark>I'd say</mark> yes, and some countries already have. <span class="step-tag why">Why</span>As a doctor, I've seen what a catwalk figure costs: <mark>eating disorders</mark> are <mark>far more common</mark> among girls who copy those models. <span class="step-tag counter">Counter</span><mark>Even though</mark> a ban alone won't change <mark>body image</mark> overnight, it sends a clear message. <span class="step-tag evaluation">Evaluation</span><mark>All things considered</mark>, a minimum healthy weight for models is a small rule with a big effect.</p></details></div>
+    <h4 style="margin:18px 0 4px">Other extended questions</h4>
+    <div class="qa"><p class="q">7 · Do you think school or workplace uniforms are a good idea?</p><details class="li-hint qa-reveal"><summary>Model answer</summary><p class="a"><span class="step-tag point">Point</span><mark>On balance, I'd say</mark> yes, within reason. <span class="step-tag why">Why</span>A uniform <mark>presents a professional image</mark> and stops people <mark>spending a fortune on clothes</mark> to <mark>fit in with</mark> classmates or colleagues. <span class="step-tag counter">Counter</span><mark>Admittedly</mark>, it also limits how people <mark>express their personality</mark>. <span class="step-tag evaluation">Evaluation</span>But for school-age children especially, I think the benefits <mark>outweigh</mark> that drawback.</p></details></div>
+    <div class="qa"><p class="q">8 · How has social media changed the way people think about fashion?</p><details class="li-hint qa-reveal"><summary>Model answer</summary><p class="a"><span class="step-tag point">Point</span><mark>In my view</mark>, it has made people <mark>far more fashion-conscious</mark> than before. <span class="step-tag why">Why</span>Everyone now tries to <mark>keep up with the latest fashions</mark> they see online, which increases <mark>peer pressure</mark>. <span class="step-tag counter">Counter</span><mark>However</mark>, it has also helped some <mark>fashion houses</mark> use more realistic models. <span class="step-tag evaluation">Evaluation</span><mark>All things considered</mark>, the effect is mixed rather than simply good or bad.</p></details></div>
+    <div class="qa"><p class="q">9 · What could be done to make the fashion industry more environmentally friendly?</p><details class="li-hint qa-reveal"><summary>Model answer</summary><p class="a"><span class="step-tag point">Point</span><mark>I'd say</mark> the biggest change would be cutting down on <mark>fast fashion</mark>. <span class="step-tag why">Why</span>Cheap clothes that are worn a few times and thrown away <mark>have a negative impact on</mark> the environment. <span class="step-tag counter">Counter</span><mark>Admittedly</mark>, well-made clothes cost more, so not everyone can <mark>afford</mark> to buy less often. <span class="step-tag evaluation">Evaluation</span><mark>On balance</mark>, though, governments could <mark>raise awareness of</mark> the problem and reward brands that use sustainable materials.</p></details></div>
+    <div class="qa"><p class="q">10 · Do you think people spend too much money on clothes nowadays?</p><details class="li-hint qa-reveal"><summary>Model answer</summary><p class="a"><span class="step-tag point">Point</span><mark>Personally, I think</mark> some people do, yes. <span class="step-tag why">Why</span><mark>Peer pressure</mark> and advertising <mark>put pressure on</mark> people to <mark>follow the latest trends</mark> instead of buying <mark>well-made</mark> pieces that last. <span class="step-tag counter">Counter</span><mark>On the other hand</mark>, clothes are also how many people <mark>express their personality</mark>, so it isn't only about waste. <span class="step-tag evaluation">Evaluation</span><mark>In comparison</mark> with buying one good item, <mark>spending a fortune on clothes</mark> worn once is far <mark>less</mark> good value for money.</p></details></div>
     <div class="ex" id="sp-p3">
       <div class="ex-head"><span class="ex-no">Practise</span><h4>Choose 3 questions, write a 4-step outline for each, then answer in 4 minutes</h4><span class="ex-type">Planner</span><span class="score" data-score></span></div>
       <div class="ex-body">
@@ -1308,8 +1359,9 @@
           <li><label><input type="checkbox" id="wr-t1-c4"><span>Includes <i>If I were you</i> / <i>I'd go for</i> / <i>It isn't worth</i></span></label></li>
           <li><label><input type="checkbox" id="wr-t1-c5"><span>Opening and closing match an informal email; ≥ 120 words; no names or addresses</span></label></li>
         </ul>
+        <div class="wcheck" id="wr-t1-check" hidden></div>
       </div>
-      <div class="ex-foot"><button class="btn ghost reset" type="button">Reset</button><span class="src">Swap with a partner: mark against the 5 points above</span></div>
+      <div class="ex-foot"><button class="btn submitcheck" type="button" data-check="t1">Submit · Self-check</button><button class="btn ghost reset" type="button">Reset</button><span class="src">Swap with a partner: mark against the 5 points above</span></div>
     </div>
   </section>
 
@@ -1365,8 +1417,9 @@
           <li><label><input type="checkbox" id="wr-t2-c4"><span>≥ 3 comparative structures / adverbs of degree (<i>far more … than · the least … · the more …, the less …</i>)</span></label></li>
           <li><label><input type="checkbox" id="wr-t2-c5"><span>Includes 1 concession paragraph (Admittedly / However) and a closing sentence with On balance; ≥ 250 words</span></label></li>
         </ul>
+        <div class="wcheck" id="wr-t2-check" hidden></div>
       </div>
-      <div class="ex-foot"><button class="btn ghost reset" type="button">Reset</button><span class="src">Write the opening + Body 1 in class (20'), finish it at home</span></div>
+      <div class="ex-foot"><button class="btn submitcheck" type="button" data-check="t2">Submit · Self-check</button><button class="btn ghost reset" type="button">Reset</button><span class="src">Write the opening + Body 1 in class (20'), finish it at home</span></div>
     </div>
   </section>
 </article>
@@ -1396,6 +1449,7 @@
   <section class="block">
     <div class="ex" id="fx-2">
       <div class="ex-head"><span class="ex-no">Exercise 2</span><h4>Read the text and tap the one phrasal verb that matches the question's meaning</h4><span class="score" data-score></span></div>
+      <p class="ex-lockinfo">🔒 The phrasal-verb meanings unlock once you either score full marks with <b>Check</b> or reveal everything with <b>Answer key</b> for all 4 items.</p>
       <div class="ex-body">
         <p class="q">a · Speaker 2 — Which phrasal verb means <i>reduce</i>?</p>
         <div class="evid" data-a="k2"><span class="ev" data-k="k1" data-def="to save money gradually for something"><b>save up</b></span> for months … My mum thinks I should <span class="ev" data-k="k2" data-def="to reduce (an amount, spending)"><b>cut down</b></span> the amount I spend on clothes, but my image is really important to me: if someone sees me in something once, I don't like to <span class="ev" data-k="k3" data-def="to go out socially"><b>go out</b></span> in it again. I always <span class="ev" data-k="k4" data-def="to dress more smartly than usual"><b>dress up</b></span> when I go clubbing, and I try to <span class="ev" data-k="k5" data-def="to keep up with (something that changes fast)"><b>keep up with</b></span> the latest fashions.</div>
@@ -1680,7 +1734,7 @@
 
 <script>
 (function () {
-  const STR = { words: 'words', checked: 'exercises checked', putInto: 'Drop into', binsHint: 'Tap to select, then tap the column to drop it into', orderHint: 'Tap the words in the correct order:', builderEmpty: 'Tap the words below to build the sentence…', adverb: 'Adverb', position: 'position', copied: 'Copied', noSpeech: 'Browser does not support text-to-speech', timeUp: "Time's up" };
+  const STR = { words: 'words', checked: 'exercises checked', putInto: 'Drop into', binsHint: 'Tap to select, then tap the column to drop it into', orderHint: 'Tap the words in the correct order:', builderEmpty: 'Tap the words below to build the sentence…', adverb: 'Adverb', position: 'position', copied: 'Copied', noSpeech: 'Browser does not support text-to-speech', timeUp: "Time's up", meaningsLocked: 'See the full answer to reveal the meaning', noRecorder: 'This browser does not support recording.', micDenied: 'Could not access the microphone — please allow microphone access in your browser.' };
   'use strict';
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
@@ -1819,7 +1873,13 @@
   $$('.evid').forEach(e => {
     const a = e.dataset.a.split(',').map(x => x.trim()).sort().join(',');
     const box = e.nextElementSibling && e.nextElementSibling.classList.contains('ev-def-box') ? e.nextElementSibling : null;
-    const showDef = s => { if (!box) return; box.hidden = false; $('.ev-def-term', box).textContent = s.textContent; $('.ev-def-text', box).textContent = s.dataset.def || ''; };
+    const exWrap = e.closest('.ex');
+    const meaningsLocked = () => exWrap && exWrap.dataset.meaningsUnlocked !== '1';
+    const showDef = s => {
+      if (!box) return; box.hidden = false;
+      if (meaningsLocked()) { box.classList.add('locked'); $('.ev-def-term', box).textContent = s.textContent; $('.ev-def-text', box).textContent = STR.meaningsLocked; return; }
+      box.classList.remove('locked'); $('.ev-def-term', box).textContent = s.textContent; $('.ev-def-text', box).textContent = s.dataset.def || '';
+    };
     const hideDef = () => { if (box) box.hidden = true; };
     $$('.ev', e).forEach(s => { s.setAttribute('role', 'button'); s.tabIndex = 0; const tog = () => { const was = s.classList.contains('sel'); $$('.ev', e).forEach(x => x.classList.remove('sel')); if (!was) { s.classList.add('sel'); showDef(s); } else hideDef(); e.classList.remove('ok', 'bad'); }; s.addEventListener('click', tog); s.addEventListener('keydown', ev => { if (ev.key === ' ' || ev.key === 'Enter') { ev.preventDefault(); tog(); } }); });
     e._check = () => { const sel = $$('.ev.sel', e).map(s => s.dataset.k).sort().join(','); const good = sel === a; e.classList.toggle('ok', good); e.classList.toggle('bad', !good); return [good ? 1 : 0, 1]; };
@@ -1872,12 +1932,18 @@
     const score = $('[data-score]', ex);
     const saved = store.get(KEY + ':' + ex.id); if (saved && score) { score.textContent = saved; const [a, b] = saved.split('/').map(Number); score.classList.toggle('full', a === b); }
     const chk = $('.check', ex), rev = $('.reveal', ex), rst = $('.reset', ex);
+    const hasEvid = $$('.evid', ex).length > 0;
+    if (hasEvid) ex.dataset.meaningsUnlocked = '0';
     if (chk) chk.addEventListener('click', () => {
       let ok = 0, n = 0; parts(ex).forEach(el => { const [a, b] = checkOne(el, true); ok += a; n += b; });
       const complete = parts(ex).every(isFilled);
-      if (score) { score.textContent = `${ok}/${n}`; score.classList.toggle('full', n > 0 && complete && ok === n); store.set(KEY + ':' + ex.id, `${ok}/${n}`); updateProgress(); }
+      const full = n > 0 && complete && ok === n;
+      if (score) { score.textContent = `${ok}/${n}`; score.classList.toggle('full', full); store.set(KEY + ':' + ex.id, `${ok}/${n}`); updateProgress(); }
+      // unlocking meanings only takes effect on the NEXT tap so a currently-open box is not left mid-toggle
+      if (hasEvid && full) { ex.dataset.meaningsUnlocked = '1'; $$('.ev-def-box', ex).forEach(b => { b.hidden = true; b.classList.remove('locked'); }); $$('.ev.sel', ex).forEach(s => s.classList.remove('sel')); }
     });
     if (rev) rev.addEventListener('click', () => {
+      if (hasEvid) { ex.dataset.meaningsUnlocked = '1'; $$('.ev-def-box', ex).forEach(b => { b.hidden = true; b.classList.remove('locked'); }); }
       const complete = parts(ex).every(isFilled);
       parts(ex).forEach(el => revealOne(el, !complete));
       $$('.sample', ex).forEach(s => { s.hidden = false; });
@@ -1888,6 +1954,8 @@
       $$('.sample', ex).forEach(s => { if (!s.dataset.keep) s.hidden = true; });
       if (score) { score.textContent = ''; score.classList.remove('full'); } store.del(KEY + ':' + ex.id); updateProgress();
       $$('.wc', ex).forEach(w => { w.textContent = '0'; });
+      if (hasEvid) { ex.dataset.meaningsUnlocked = '0'; $$('.ev-def-box', ex).forEach(b => { b.hidden = true; b.classList.remove('locked'); }); }
+      $$('.wcheck', ex).forEach(w => { w.hidden = true; w.innerHTML = ''; });
     });
   });
   // samples that were visible by default stay visible after reset
@@ -1973,6 +2041,105 @@
     }));
     const st = $('.tstop', t); if (st) st.addEventListener('click', () => { clearInterval(iv); left = 0; t.classList.remove('done'); show(); });
   });
+
+  /* ---------- self-recording (student's own voice; MediaRecorder, client-side only — nothing uploaded, nothing saved beyond this page view) ---------- */
+  $$('.rec-widget').forEach(w => {
+    const startBtn = $('.rec-start', w), stopBtn = $('.rec-stop', w), audioEl = $('.rec-audio', w), msg = $('.rec-msg', w);
+    if (!startBtn || !stopBtn || !audioEl) return;
+    if (!('MediaRecorder' in window) || !navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+      startBtn.disabled = true; stopBtn.disabled = true; msg.textContent = STR.noRecorder; msg.classList.add('err');
+      return;
+    }
+    let recorder = null, chunks = [], stream = null;
+    startBtn.addEventListener('click', async () => {
+      msg.textContent = ''; msg.classList.remove('err');
+      try {
+        stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        chunks = [];
+        recorder = new MediaRecorder(stream);
+        recorder.addEventListener('dataavailable', ev => { if (ev.data && ev.data.size) chunks.push(ev.data); });
+        recorder.addEventListener('stop', () => {
+          const blob = new Blob(chunks, { type: recorder.mimeType || 'audio/webm' });
+          if (audioEl.src) URL.revokeObjectURL(audioEl.src);
+          audioEl.src = URL.createObjectURL(blob); audioEl.hidden = false;
+          stream.getTracks().forEach(tr => tr.stop());
+          w.classList.remove('recording');
+        });
+        recorder.start();
+        w.classList.add('recording'); startBtn.disabled = true; stopBtn.disabled = false;
+      } catch (err) {
+        msg.textContent = STR.micDenied; msg.classList.add('err'); w.classList.remove('recording');
+      }
+    });
+    stopBtn.addEventListener('click', () => {
+      if (recorder && recorder.state !== 'inactive') recorder.stop();
+      startBtn.disabled = false; stopBtn.disabled = true;
+    });
+  });
+
+  /* ---------- writing self-check: rule-based heuristic checklist (word count, structure, common error patterns, taught-vocabulary reuse) ----------
+     NOTE: this is NOT an AI grammar checker — it is a static page with no backend, so the check runs entirely as JS pattern-matching in the browser.
+     It flags things worth a second look; it never marks work "right/wrong". */
+  const WCHECK_VOCAB = {
+    t1: ["i'd go for", 'dress for the occasion', 'if i were you', "it's worth", "isn't worth", 'far more comfortable', 'much cooler', 'well-made', 'fits you', 'loose-fitting', 'create a good impression', 'smart-casual', 'spending a fortune', 'trendy', 'go with'],
+    t2: ['self-esteem', 'body image', 'sets unrealistic standards', 'puts pressure on', 'eating disorder', 'fast fashion', 'peer pressure', 'counterfeit goods', 'knock-off', 'genuine product', 'has a negative impact on', 'illegal activity', 'express your personality', 'the more', 'the less', 'on balance', 'ban agencies from', 'raise awareness of', 'follow the latest trends', 'spending a fortune on clothes']
+  };
+  const WCHECK_CFG = {
+    t1: { textId: 'wr-t1-text', resultId: 'wr-t1-check', min: 120, max: 200, minPara: 3, isEmail: true },
+    t2: { textId: 'wr-t2-text', resultId: 'wr-t2-check', min: 250, max: 350, minPara: 4, isEmail: false }
+  };
+  function wcWordCount(text) { return (text.match(/[A-Za-z\u00C0-\u1EF90-9']+/g) || []).length; }
+  function wcheckRun(kind) {
+    const cfg = WCHECK_CFG[kind]; if (!cfg) return;
+    const ta = document.getElementById(cfg.textId), box = document.getElementById(cfg.resultId);
+    if (!ta || !box) return;
+    const text = ta.value || '';
+    const words = wcWordCount(text);
+    const paras = text.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean);
+    const items = [];
+    if (words === 0) items.push(['warn', 'No text to check yet (0 words).']);
+    else if (words < cfg.min) items.push(['warn', `Word count: ${words} — below the minimum of ${cfg.min}. Add more content.`]);
+    else if (words > cfg.max) items.push(['warn', `Word count: ${words} — longer than the suggested range (up to ~${cfg.max}). Consider trimming it down.`]);
+    else items.push(['pass', `Word count: ${words} — within the suggested range (${cfg.min}–${cfg.max}).`]);
+    if (cfg.isEmail) {
+      const first = paras[0] || '', last = paras[paras.length - 1] || '';
+      const hasOpen = /^(hi|hello|dear)\b/i.test(first.trim());
+      const hasClose = /(best wishes|regards|yours (sincerely|faithfully|truly)|see you soon|take care|speak soon)/i.test(last);
+      items.push([hasOpen ? 'pass' : 'warn', hasOpen ? 'Has a clear opening greeting (Hi … / Dear …).' : 'No clear opening greeting found (should start with Hi … / Dear …).']);
+      items.push([paras.length >= cfg.minPara ? 'pass' : 'warn', `${paras.length} paragraph(s) — an email needs an opening, the main points, and a closing (≥ ${cfg.minPara} paragraphs).`]);
+      items.push([hasClose ? 'pass' : 'warn', hasClose ? 'Has a suitable closing line/sign-off.' : 'No clear closing line found (Best wishes, / Let me know …).']);
+    } else {
+      const first = paras[0] || '', last = paras[paras.length - 1] || '';
+      const hasOpinion = /(i (largely |partly |strongly )?(agree|disagree)|in my (opinion|view)|i believe|some people (believe|think))/i.test(first);
+      const hasConclusion = /(on balance|in conclusion|overall|to conclude|all things considered)/i.test(last);
+      items.push([hasOpinion ? 'pass' : 'warn', hasOpinion ? 'The opening paragraph states a clear opinion/context.' : 'The opening paragraph is not clear about your opinion (try I largely agree … / In my opinion …).']);
+      items.push([paras.length >= cfg.minPara ? 'pass' : 'warn', `${paras.length} paragraph(s) — an essay needs an intro + at least 2 body paragraphs + a conclusion (≥ ${cfg.minPara} paragraphs).`]);
+      items.push([hasConclusion ? 'pass' : 'warn', hasConclusion ? 'Has a clear concluding sentence (On balance … / Overall …).' : 'No clear concluding sentence found (On balance … / Overall …).']);
+    }
+    const errs = [];
+    if (cfg.isEmail === false && /\b(don't|doesn't|isn't|aren't|can't|won't|i'm|it's|didn't|wouldn't|couldn't|shouldn't|i've|we're|they're|you're|i'll|we'll)\b/i.test(text)) errs.push("Contains contractions (don't, it's, I'm …) — formal essay register should spell these out (do not, it is, I am …).");
+    if (/ {2,}/.test(text)) errs.push('Contains a double space (two spaces in a row) somewhere in the text.');
+    if (/\balot\b/i.test(text)) errs.push('"alot" — should be written as two words, "a lot".');
+    if (/\bcould of\b/i.test(text)) errs.push('"could of" — should be "could have".');
+    if (/\bshould of\b/i.test(text)) errs.push('"should of" — should be "should have".');
+    if (/\bwould of\b/i.test(text)) errs.push('"would of" — should be "would have".');
+    if (/\byour (a|an|is|are|going to|welcome)\b/i.test(text)) errs.push('"your" is followed by a verb/article — check whether it should be "you\'re".');
+    if (/\bits (a|an|been|going to|not)\b/i.test(text)) errs.push('"its" is followed by a verb/article — check whether it should be "it\'s".');
+    let badStart = [];
+    try { const sentences = text.split(/(?<=[.!?])\s+/).map(s => s.trim()).filter(Boolean); badStart = sentences.filter(s => /^[a-z]/.test(s)); } catch (e) {}
+    if (badStart.length) errs.push(`${badStart.length} sentence(s) may not start with a capital letter (e.g. "${badStart[0].slice(0, 34)}…").`);
+    if (errs.length) errs.forEach(m => items.push(['warn', m]));
+    else items.push(['pass', 'No common formatting/spelling issues found (informal contractions, double spaces, missing capital letters, alot/could of…).']);
+    const lower = text.toLowerCase();
+    const vocab = WCHECK_VOCAB[kind] || [];
+    const used = vocab.filter(v => lower.includes(v));
+    items.push([used.length >= 4 ? 'pass' : 'warn', `Used ${used.length}/${vocab.length} taught topic collocations${used.length ? ': ' + used.slice(0, 6).join(' · ') : ''}.`]);
+    box.hidden = false;
+    box.innerHTML = '<div class="wcheck-head">Self-check results — a checklist, not an official grade</div>'
+      + '<div class="wcheck-note">This check runs simple rule/keyword matching in your browser (a static page with no server) — it is NOT a real AI grammar checker. Use it to catch basic issues before you submit; it does not replace your teacher\'s marking.</div>'
+      + '<ul>' + items.map(([cls, label]) => `<li class="${cls}"><span class="ic">${cls === 'pass' ? '✓' : '⚠'}</span><span>${label}</span></li>`).join('') + '</ul>';
+  }
+  $$('.submitcheck').forEach(b => b.addEventListener('click', () => wcheckRun(b.dataset.check)));
 })();
 </script>
 
