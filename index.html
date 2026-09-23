@@ -1,8 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
 <title>Fashion Matters B2</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -564,9 +559,6 @@
   /* Sheet 7: compact source citation line under an exercise heading */
   .ex-src { margin: -4px 0 8px; font-size: .8em; color: var(--muted); font-family: var(--font-cond); letter-spacing: .03em; text-transform: uppercase; }
 </style>
-</head>
-<body>
-
 
 <aside class="rail" aria-label="Table of contents">
   <div class="rail-brand">
@@ -1449,7 +1441,7 @@
   <section class="block">
     <div class="ex" id="fx-2">
       <div class="ex-head"><span class="ex-no">Exercise 2</span><h4>Read the text and tap the one phrasal verb that matches the question's meaning</h4><span class="score" data-score></span></div>
-      <p class="ex-lockinfo">🔒 The phrasal-verb meanings unlock once you either score full marks with <b>Check</b> or reveal everything with <b>Answer key</b> for all 4 items.</p>
+      <p class="ex-lockinfo">🔒 The phrasal-verb meanings only appear once you tap <b>Answer key</b> to reveal all the answers.</p>
       <div class="ex-body">
         <p class="q">a · Speaker 2 — Which phrasal verb means <i>reduce</i>?</p>
         <div class="evid" data-a="k2"><span class="ev" data-k="k1" data-def="to save money gradually for something"><b>save up</b></span> for months … My mum thinks I should <span class="ev" data-k="k2" data-def="to reduce (an amount, spending)"><b>cut down</b></span> the amount I spend on clothes, but my image is really important to me: if someone sees me in something once, I don't like to <span class="ev" data-k="k3" data-def="to go out socially"><b>go out</b></span> in it again. I always <span class="ev" data-k="k4" data-def="to dress more smartly than usual"><b>dress up</b></span> when I go clubbing, and I try to <span class="ev" data-k="k5" data-def="to keep up with (something that changes fast)"><b>keep up with</b></span> the latest fashions.</div>
@@ -1939,8 +1931,6 @@
       const complete = parts(ex).every(isFilled);
       const full = n > 0 && complete && ok === n;
       if (score) { score.textContent = `${ok}/${n}`; score.classList.toggle('full', full); store.set(KEY + ':' + ex.id, `${ok}/${n}`); updateProgress(); }
-      // unlocking meanings only takes effect on the NEXT tap so a currently-open box is not left mid-toggle
-      if (hasEvid && full) { ex.dataset.meaningsUnlocked = '1'; $$('.ev-def-box', ex).forEach(b => { b.hidden = true; b.classList.remove('locked'); }); $$('.ev.sel', ex).forEach(s => s.classList.remove('sel')); }
     });
     if (rev) rev.addEventListener('click', () => {
       if (hasEvid) { ex.dataset.meaningsUnlocked = '1'; $$('.ev-def-box', ex).forEach(b => { b.hidden = true; b.classList.remove('locked'); }); }
@@ -2142,6 +2132,3 @@
   $$('.submitcheck').forEach(b => b.addEventListener('click', () => wcheckRun(b.dataset.check)));
 })();
 </script>
-
-</body>
-</html>
