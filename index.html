@@ -850,6 +850,8 @@
   .bins .chip-w.keyfix::after { content: " ← key"; opacity: .8; font-size: .82em; color: #A6740A; }
   .ex.key-shown .check { opacity: .45; cursor: not-allowed; }
   .ex.key-shown input:disabled, .ex.key-shown select:disabled, .ex.key-shown button.chip-w:disabled, .ex.key-shown .gap:disabled { opacity: 1; cursor: default; color: var(--ink); }
+  /* any element carrying the hidden attribute stays hidden, whatever display its class sets */
+  main [hidden] { display: none !important; }
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Roboto+Condensed:wght@500;700&family=Roboto+Mono:wght@500;700&display=swap">
@@ -1572,7 +1574,7 @@
     <div>
       <span class="eyebrow">Sheet 5 / 11 · VSTEP Reading format · 2 passages · 20 questions</span>
       <h2>Reading</h2>
-      <p class="lead">Choose the best answer A, B, C or D, then press Check. Each question then shows the clue, an explanation and 📍 Locate, which highlights the evidence in the passage.</p>
+      <p class="lead">Choose the best answer A, B, C or D, then press <b>Check · show answers</b> to see your answer, the key, the explanation and the evidence. <b>Show in text</b> highlights it in the passage.</p>
     </div>
     <div class="prog" data-prog>0 exercises checked</div>
   </div>
@@ -1603,7 +1605,7 @@
     <div>
       <span class="eyebrow">Sheet 6 / 11 · VSTEP Listening format · 3 parts · 13 questions</span>
       <h2>Listening</h2>
-      <p class="lead">Read the questions, press ▶ Play and choose the best answer. After Check, the transcript appears and 📍 Locate highlights where the answer is heard.</p>
+      <p class="lead">Read the questions, press ▶ Play and choose the best answer. After <b>Check · show answers</b>, the transcript appears and <b>Show in text</b> highlights where the answer is heard.</p>
     </div>
     <div class="prog" data-prog>0 exercises checked</div>
   </div>
@@ -3265,6 +3267,7 @@ Great to hear …" style="min-height:220px"></textarea>
   /* ---------- Reading / Listening: palette, mock-test style answer review after Check, Show in text ---------- */
   const escH = t => String(t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   $$('.ex.rl').forEach(ex => {
+    try { localStorage.removeItem((($('main') && $('main').dataset.key) || 'lesson') + ':' + ex.id); } catch (e) {}
     const src = $('.rl-src', ex), qs = $('.rl-qs', ex), pal = $$('.rl-pal button', ex), filt = $('.rv-filter', ex);
     const items = $$('.rl-q', ex);
     const palFor = id => pal.find(b => b.dataset.q === id);
